@@ -1,0 +1,134 @@
+{
+    "abbreviation": "S2",
+    "name": "Sentinel 2",
+    "operator": "ESA",
+    "description": "The Copernicus Sentinel-2 mission comprises a constellation of two polar-orbiting satellites placed in the same sun-synchronous orbit, phased at 180° to each other. It aims at monitoring variability in land surface conditions, and its wide swath width (290 km) and high revisit time (10 days at the equator with one satellite, and 5 days with 2 satellites under cloud-free conditions which results in 2-3 days at mid-latitudes) will support monitoring of Earth's surface changes.",
+    "revisit_time": "5 (10 each satellite)",
+    "orbit_time": 100.6,
+    "altitude": 786,
+    "scene_size": "(290,*)",
+    "inclination": "98.62",
+    "launch_date": "06/23/2015 | 03/07/2017",
+    "regime": "Sun-synchronous orbit",
+    "data_source": "https://sentinel.esa.int/web/sentinel/missions/sentinel-2",
+    "constellation": "2",
+    "bands_list": [
+        {
+            "number": 1,
+            "name": "Coastal Aerosol",
+            "abbreviation": "CAER",
+            "wavelength": "0.443",
+            "sensor": "MSI",
+            "resolution": "60",
+            "description": ""
+        },
+        {
+            "number": 2,
+            "name": "Blue",
+            "abbreviation": "BLUE",
+            "wavelength": "0.4924",
+            "sensor": "MSI",
+            "resolution": "10",
+            "description": ""
+        },
+        {
+            "number": 3,
+            "name": "Green",
+            "abbreviation": "GREEN",
+            "wavelength": "0.5598",
+            "sensor": "MSI",
+            "resolution": "10",
+            "description": ""
+        },
+        {
+            "number": 4,
+            "name": "Red",
+            "abbreviation": "RED",
+            "wavelength": "0.6646",
+            "sensor": "MSI",
+            "resolution": "10",
+            "description": ""
+        },
+        {
+            "number": 5,
+            "name": "Vegetation Red Edge 1",
+            "abbreviation": "VRE1",
+            "wavelength": "0.7041",
+            "sensor": "MSI",
+            "resolution": "20",
+            "description": ""
+        },
+        {
+            "number": 6,
+            "name": "Vegetation Red Edge 2",
+            "abbreviation": "VRE2",
+            "wavelength": "0.7405",
+            "sensor": "MSI",
+            "resolution": "20",
+            "description": ""
+        },
+        {
+            "number": 7,
+            "name": "Vegetation Red Edge 3",
+            "abbreviation": "VRE3",
+            "wavelength": "0.7828",
+            "sensor": "MSI",
+            "resolution": "20",
+            "description": ""
+        },
+        {
+            "number": 8,
+            "name": "Near Infared",
+            "abbreviation": "NIR",
+            "wavelength": "0.8328",
+            "sensor": "MSI",
+            "resolution": "10",
+            "description": ""
+        },
+        {
+            "number": "8A",
+            "name": "Narrow Near Infared",
+            "abbreviation": "NNIR",
+            "wavelength": "0.8647",
+            "sensor": "MSI",
+            "resolution": "20",
+            "description": ""
+        },
+        {
+            "number": 9,
+            "name": "Water Vapour",
+            "abbreviation": "WVPR",
+            "wavelength": "0.9451",
+            "sensor": "MSI",
+            "resolution": "60",
+            "description": ""
+        },
+        {
+            "number": 10,
+            "name": "Short Wave Infared Cirrus",
+            "abbreviation": "SWIRC",
+            "wavelength": "1.3735",
+            "sensor": "MSI",
+            "resolution": "60",
+            "description": ""
+        },
+        {
+            "number": 11,
+            "name": "Short Wave Infared 1",
+            "abbreviation": "SWIR1",
+            "wavelength": "1.6137",
+            "sensor": "MSI",
+            "resolution": "20",
+            "description": ""
+        },
+        {
+            "number": 12,
+            "name": "Short Wave Infared 2",
+            "abbreviation": "SWIR2",
+            "wavelength": "2.2024",
+            "sensor": "MSI",
+            "resolution": "20",
+            "description": ""
+        }
+    ]
+}
