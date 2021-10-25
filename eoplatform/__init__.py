@@ -3,4 +3,4 @@ from eoplatform.main import download
 from eoplatform.main import info
 
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
