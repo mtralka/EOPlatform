@@ -1,115 +1,115 @@
 {
-    "abbreviation": "L8",
-    "name": "Landsat 8",
-    "operator": "NASA/USGS",
-    "description": "Landsat 8 launched on February 11, 2013, from Vandenberg Air Force Base, California, on an Atlas-V 401 rocket, with the extended payload fairing (EPF) from United Launch Alliance, LLC. (The Landsat 8 Launch in Quotes.) The Landsat 8 satellite payload consists of two science instruments—the Operational Land Imager (OLI) and the Thermal Infrared Sensor (TIRS). These two sensors provide seasonal coverage of the global landmass at a spatial resolution of 30 meters (visible, NIR, SWIR); 100 meters (thermal); and 15 meters (panchromatic). Landsat 8 was developed as a collaboration between NASA and the U.S. Geological Survey (USGS). NASA led the design, construction, launch, and on-orbit calibration phases, during which time the satellite was called the Landsat Data Continuity Mission (LDCM). On May 30, 2013, USGS took over routine operations and the satellite became Landsat 8. USGS leads post-launch calibration activities, satellite operations, data product generation, and data archiving at the Earth Resources Observation and Science (EROS) center.",
-    "revisit_time": 16,
-    "orbit_time": 99,
-    "altitude": 705,
-    "scene_size": "(185,180)",
-    "launch_date": "02/11/2013",
-    "regime": "Sun-synchronous orbit",
-    "data_source": "https://www.usgs.gov/core-science-systems/nli/landsat/landsat-8?qt-science_support_page_related_con=0#qt-science_support_page_related_con",
-    "constellation":"1",
-    "bands_list": [
-        {
-            "number": 1,
-            "name": "Coastal Aerosol",
-            "abbreviation": "CAER",
-            "wavelength": "0.433-0.453",
-            "sensor": "OLI",
-            "resolution": "30",
-            "description": "Band 1 senses deep blues and violets. Blue light is hard to collect from space because it’s scattered easily by tiny bits of dust and water in the air, and even by air molecules themselves. This is one reason why very distant things (like mountains on the horizon) appear blueish, and why the sky is blue. Just as we see a lot of hazy blue when we look up at space on a sunny day, Landsat 8 sees the sky below it when it looks down at us through the same air. That part of the spectrum is hard to collect with enough sensitivity to be useful, and Band 1 is the only instrument of its kind producing open data at this resolution – one of many things that make this satellite special. It’s also called the coastal/aerosol band, after its two main uses: imaging shallow water, and tracking fine particles like dust and smoke. By itself, its output looks a lot like Band 2 (normal blue)’s, but if we contrast them and highlight areas with more deep blue, we can see differences"
-        },
-        {
-            "number": 2,
-            "name": "Blue",
-            "abbreviation": "BLUE",
-            "wavelength": "0.450-0.515",
-            "sensor": "OLI",
-            "resolution": "30",
-            "description": ""
-        },
-        {
-            "number": 3,
-            "name": "Green",
-            "abbreviation": "GREEN",
-            "wavelength": "0.525-0.600",
-            "sensor": "OLI",
-            "resolution": "30",
-            "description": ""
-        },
-        {
-            "number": 4,
-            "name": "Red",
-            "abbreviation": "RED",
-            "wavelength": "0.630-0.680",
-            "sensor": "OLI",
-            "resolution": "30",
-            "description": ""
-        },
-        {
-            "number": 5,
-            "name": "Near Infared",
-            "abbreviation": "NIR",
-            "wavelength": "0.845-0.885",
-            "sensor": "OLI",
-            "resolution": "30",
-            "description": ""
-        },
-        {
-            "number": 6,
-            "name": "Short Wave Infared 1",
-            "abbreviation": "SWIR1",
-            "wavelength": "1.560-1.660",
-            "sensor": "OLI",
-            "resolution": "30",
-            "description": ""
-        },
-        {
-            "number": 7,
-            "name": "Short Wave Infared 2",
-            "abbreviation": "SWIR2",
-            "wavelength": "2.100-2.300",
-            "sensor": "OLI",
-            "resolution": "30",
-            "description": ""
-        },
-        {
-            "number": 8,
-            "name": "Panchromatic",
-            "abbreviation": "PAN",
-            "wavelength": "0.500-0.680",
-            "sensor": "OLI",
-            "resolution": "15",
-            "description": ""
-        },
-        {
-            "number": 9,
-            "name": "Cirrus",
-            "abbreviation": "CIRR",
-            "wavelength": "1.360-1.390",
-            "sensor": "OLI",
-            "resolution": "30",
-            "description": ""
-        },
-        {
-            "number": 10,
-            "name": "Thermal Infared 1",
-            "abbreviation": "TIR1",
-            "wavelength": "10.6-11.2",
-            "sensor": "TIRS",
-            "resolution": "100",
-            "description": ""
-        },
-        {
-            "number": 11,
-            "name": "Thermal Infared 2",
-            "abbreviation": "TIR2",
-            "wavelength": "11.5-12.5",
-            "sensor": "TIRS",
-            "resolution": "100",
-            "description": ""
-        }
-    ]
+  "abbreviation": "L8",
+  "altitude": 705,
+  "bands_list": [
+    {
+      "abbreviation": "CAER",
+      "description": "Band 1 senses deep blues and violets. Blue light is hard to collect from space because it\u2019s scattered easily by tiny bits of dust and water in the air, and even by air molecules themselves. This is one reason why very distant things (like mountains on the horizon) appear blueish, and why the sky is blue. Just as we see a lot of hazy blue when we look up at space on a sunny day, Landsat 8 sees the sky below it when it looks down at us through the same air. That part of the spectrum is hard to collect with enough sensitivity to be useful, and Band 1 is the only instrument of its kind producing open data at this resolution \u2013 one of many things that make this satellite special. It\u2019s also called the coastal/aerosol band, after its two main uses: imaging shallow water, and tracking fine particles like dust and smoke. By itself, its output looks a lot like Band 2 (normal blue)\u2019s, but if we contrast them and highlight areas with more deep blue, we can see differences",
+      "name": "Coastal Aerosol",
+      "number": 1,
+      "resolution": "30",
+      "sensor": "OLI",
+      "wavelength": "0.433-0.453"
+    },
+    {
+      "abbreviation": "BLUE",
+      "description": "",
+      "name": "Blue",
+      "number": 2,
+      "resolution": "30",
+      "sensor": "OLI",
+      "wavelength": "0.450-0.515"
+    },
+    {
+      "abbreviation": "GREEN",
+      "description": "",
+      "name": "Green",
+      "number": 3,
+      "resolution": "30",
+      "sensor": "OLI",
+      "wavelength": "0.525-0.600"
+    },
+    {
+      "abbreviation": "RED",
+      "description": "",
+      "name": "Red",
+      "number": 4,
+      "resolution": "30",
+      "sensor": "OLI",
+      "wavelength": "0.630-0.680"
+    },
+    {
+      "abbreviation": "NIR",
+      "description": "",
+      "name": "Near Infared",
+      "number": 5,
+      "resolution": "30",
+      "sensor": "OLI",
+      "wavelength": "0.845-0.885"
+    },
+    {
+      "abbreviation": "SWIR1",
+      "description": "",
+      "name": "Short Wave Infared 1",
+      "number": 6,
+      "resolution": "30",
+      "sensor": "OLI",
+      "wavelength": "1.560-1.660"
+    },
+    {
+      "abbreviation": "SWIR2",
+      "description": "",
+      "name": "Short Wave Infared 2",
+      "number": 7,
+      "resolution": "30",
+      "sensor": "OLI",
+      "wavelength": "2.100-2.300"
+    },
+    {
+      "abbreviation": "PAN",
+      "description": "",
+      "name": "Panchromatic",
+      "number": 8,
+      "resolution": "15",
+      "sensor": "OLI",
+      "wavelength": "0.500-0.680"
+    },
+    {
+      "abbreviation": "CIRR",
+      "description": "",
+      "name": "Cirrus",
+      "number": 9,
+      "resolution": "30",
+      "sensor": "OLI",
+      "wavelength": "1.360-1.390"
+    },
+    {
+      "abbreviation": "TIR1",
+      "description": "",
+      "name": "Thermal Infared 1",
+      "number": 10,
+      "resolution": "100",
+      "sensor": "TIRS",
+      "wavelength": "10.6-11.2"
+    },
+    {
+      "abbreviation": "TIR2",
+      "description": "",
+      "name": "Thermal Infared 2",
+      "number": 11,
+      "resolution": "100",
+      "sensor": "TIRS",
+      "wavelength": "11.5-12.5"
+    }
+  ],
+  "constellation": "1",
+  "data_source": "https://www.usgs.gov/core-science-systems/nli/landsat/landsat-8?qt-science_support_page_related_con=0#qt-science_support_page_related_con",
+  "description": "Landsat 8 launched on February 11, 2013, from Vandenberg Air Force Base, California, on an Atlas-V 401 rocket, with the extended payload fairing (EPF) from United Launch Alliance, LLC. (The Landsat 8 Launch in Quotes.) The Landsat 8 satellite payload consists of two science instruments\u2014the Operational Land Imager (OLI) and the Thermal Infrared Sensor (TIRS). These two sensors provide seasonal coverage of the global landmass at a spatial resolution of 30 meters (visible, NIR, SWIR); 100 meters (thermal); and 15 meters (panchromatic). Landsat 8 was developed as a collaboration between NASA and the U.S. Geological Survey (USGS). NASA led the design, construction, launch, and on-orbit calibration phases, during which time the satellite was called the Landsat Data Continuity Mission (LDCM). On May 30, 2013, USGS took over routine operations and the satellite became Landsat 8. USGS leads post-launch calibration activities, satellite operations, data product generation, and data archiving at the Earth Resources Observation and Science (EROS) center.",
+  "launch_date": "02/11/2013",
+  "name": "Landsat 8",
+  "operator": "NASA/USGS",
+  "orbit_time": 99,
+  "regime": "Sun-synchronous orbit",
+  "revisit_time": 16,
+  "scene_size": "(185,180)"
 }

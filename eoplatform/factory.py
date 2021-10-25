@@ -10,12 +10,12 @@ from typing import Union
 from eoplatform.baseClasses import Platform
 
 
-# if sys.version_info >= (3, 8, 0):
-#     from typing import Final  # type: ignore
-# else:
-#     from typing_extensions import Final
+if sys.version_info >= (3, 8, 0):
+    from typing import Final  # type: ignore
+else:
+    from typing_extensions import Final
 
-PLATFORM_PATH: Path = Path("eoplatform/platforms")
+PLATFORM_PATH: Final[Path] = Path("eoplatform/platforms")
 
 
 class EOPlatformFactory:

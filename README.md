@@ -20,12 +20,12 @@
 
 ## About
 
-*eoplatform* is a Python package that aims to simplify Remote Sensing Earth Observation by providing actionable information on a wide swath of RS platforms and provide a simple API for downloading and visualizing RS imagery. Made for scientsits, educators, and hobbiests alike. 
+*eoplatform* is a Python package that aims to simplify Remote Sensing Earth Observation by providing actionable information on a wide swath of RS platforms and provide a simple API for downloading and visualizing RS imagery. Made for scientsits, educators, and hobbiests alike.
 
 * Easy to access **information** on RS platforms
-  *   Band information
-  *   Orbit regimes
-  *   Scene statistics
+  * Band information
+  * Orbit regimes
+  * Scene statistics
 * Accessible data downloading (in-progress)
   * Landsat 8
   * Sentinel-2
@@ -41,13 +41,9 @@ If you want to install the latest version from git you can run
 pip install git+git://github.com/mtralka/eoplatform
 ```
 
-
 ### Example
 
-
 <img src="images/eoplatform-info-landsat8.PNG" alt="Landsat8 Info" width="600">
-    
-
 
 ## Usage
 
@@ -56,10 +52,12 @@ pip install git+git://github.com/mtralka/eoplatform
 ### CLI
 
 Commands:
+
 * `info` - find platform info
 * `download` - download platform scenes
 
-#### Querying platform info
+#### Querying platform info (cli)
+
 ```sh
 Usage: eoplatform info [OPTIONS] PLATFORM
 
@@ -71,17 +69,22 @@ Options:
                                   [default: description]     
   --help                          Show this message and exit.
 ```
+
 EX:
 
-    $ eoplatform info Landsat8
+```sh
+eoplatform info Landsat8
+```
 
 show all info *eoplatform* has on `Landsat8`
 
-    $ eoplatform info Landsat8 -b
-    
+```sh
+eoplatform info Landsat8 -b
+```
+
 shows only `Landsat8`'s bands
 
-#### Downloading platform scenes
+#### Downloading platform scenes (cli)
 
 in-progress
 
@@ -97,12 +100,11 @@ Options:
 
 ### Module import
 
+#### Querying platform info (import)
 
-#### Querying platform info
+You can import your desired platform
 
-
-You can import your desired platform 
-```
+```python
 from eoplatform import Landsat8
 
 Landsat8.info()  # OR print(Landsat8)
@@ -110,30 +112,29 @@ Landsat8.info()  # OR print(Landsat8)
 
 or search from the *eoplatform* module itself
 
-```
+```python
 import eoplatform as eop
 
 eop.info("Landsat8")
 ```
- #### Downloading platform scenes
- 
- 
+
+#### Downloading platform scenes (import)
+
  in-progress
- 
+
  ```python
 from eoplatform import Landsat8
 
 Landsat8.download()
 ```
- 
+
 ```python
 import eoplatform as eop
 
 eop.download("Landsat8")
 ```
- 
- both methods accept the full range of search keword arguments
 
+both methods accept the full range of search keword arguments
 
 ## Roadmap
 
@@ -145,8 +146,10 @@ See the [open issues](https://github.com/mtralka/EOPlatform/issues) for a list o
 ## Contributing
 
 Contributions are welcome. Any contributions you make are appreciated.
+
 * If you have suggestions for adding or removing projects, feel free to [open an issue](https://github.com/mtralka/EOPlatform/issues/new) to discuss it, or directly create a pull request with the proposed changes.
 * Create individual PR for each suggestion.
+* Use pre-commit hooks - `pre-commit install`
 * Code style is `black`, `mypy --strict`
 
 ## License
