@@ -1,4 +1,3 @@
-from typing import Union
 from typing import cast
 
 from eoplatform.baseClasses import Bands

@@ -1,12 +1,15 @@
 [tool.poetry]
 name = "eoplatform"
-version = "0.1.0"
+version = "0.1.1"
 description = "Earth Observation made easy."
 authors = ["Matthew Tralka <matthew@tralka.xyz>"]
 maintainers = ["Matthew Tralka <matthew@tralka.xyz>"]
 license = "GPL-3.0-only"
-repository = "README.md"
+repository = "https://github.com/mtralka/EOPlatform"
+readme = "README.md"
 keywords = ["remote sensing", "earth observation", "gis", "education"]
+include = ["eoplatform/platforms/*"]
+
 
 classifiers = [
     "Development Status :: 4 - Beta",
