@@ -143,7 +143,6 @@ class Platform:
         platform_bands: type = make_dataclass(
             "Bands",
             [(b["abbreviation"], Band, field(default=Band(**b))) for b in bands_list],  # type: ignore
-            frozen=True,
             bases=(Bands,),
         )
         self.bands = platform_bands()
