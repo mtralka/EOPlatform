@@ -62,7 +62,6 @@ class Band:
 
 @dataclass
 class Bands:
-
     def info(self) -> None:
         table = self._as_table()
         console.print(Panel(table, expand=False, title=self._generate_title()))
@@ -175,8 +174,8 @@ class Platform:
 
         if self.inclination:
             table.add_row(
-            "Inclination", f"{self.inclination} {get_meta_unit(self,'inclination')}"
-        )
+                "Inclination", f"{self.inclination} {get_meta_unit(self,'inclination')}"
+            )
 
         table.add_row(
             "Revisit Time", f"{self.revisit_time} {get_meta_unit(self,'revisit_time')}"
@@ -192,19 +191,18 @@ class Platform:
             """
         )
 
-        band_table = cast(Bands, self.bands)._as_table(title=True)  
+        band_table = cast(Bands, self.bands)._as_table(title=True)
 
         description: Text = Text("")
         if show_description:
             description = Text(self.description, justify="full", end="\n\n")
-
 
         group: Group = Group(Align.center(table), band_table, description, fit=False)
         panel: Panel = Panel(
             group,
             expand=False,
             title=f"[wheat4][bold]🛰️ {self.name}[/bold] [italic]({self.abbreviation})[/italic]",
-            width=100
+            width=100,
         )
         if self.data_source:
             panel.subtitle = f"[blue underline][link={self.data_source}]Source[/link]"
