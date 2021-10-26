@@ -18,15 +18,46 @@ from rich.panel import Panel
 from rich.table import Table
 from rich.text import Text
 
-from eoplatform.console import console
+
+import sys
+
+if sys.version_info >= (3, 8, 0):
+    from typing import Final  # type: ignore
+else:
+    from typing_extensions import Final
+
+from eoplatform.info.visualizers import (
+    visualize_platform,
+    visualize_band,
+    visualize_bands,
+)
 
 
-def get_meta_unit(object: Any, attribute_name: str) -> str:
-    return str(object.__dataclass_fields__[attribute_name].metadata["unit"])
+class Base:
+    @staticmethod
+    def get_meta_unit(object: Any, attribute_name: str) -> str:
+        return str(object.__dataclass_fields__[attribute_name].metadata["unit"])
+
+    def info(self, show_description: bool = True, title=False) -> None:
+
+        if isinstance(self, Bands):
+            return
+
+        if isinstance(self, Platform):
+            return
+        VISUALIZERS: Final[dict] = {
+            Band: visualize_band,
+            Bands: visualize_bands,
+            Platform: visualize_platform,
+        }
+
+        VISUALIZERS[type(self)](self, show_description=show_description, title=title)
+
+        return None
 
 
 @dataclass
-class Band:
+class Band(Base):
     number: int
     name: str
     abbreviation: str
@@ -40,72 +71,9 @@ class Band:
 
         return ""
 
-    def info(self) -> None:
-        table: Table = Table(show_header=False, show_edge=False)
-        table.add_column(justify="right")
-        table.add_column(justify="left")
-        table.add_row("Sensor", f"{self.sensor}")
-        table.add_row(
-            "Wavelength", f"{self.wavelength} {get_meta_unit(self,'wavelength')}"
-        )
-        table.add_row(
-            "Resolution", f"{self.resolution} {get_meta_unit(self, 'resolution')}"
-        )
-        console.print(
-            Panel(
-                table,
-                expand=False,
-                title=f"[wheat4][bold]#{self.number} - {self.name}[/bold] [italic]({self.abbreviation})[/italic]",
-            )
-        )
-
 
 @dataclass
-class Bands:
-    def info(self) -> None:
-        table = self._as_table()
-        console.print(Panel(table, expand=False, title=self._generate_title()))
-
-    def _generate_title(self) -> str:
-
-        title: str = f"{str(len(self))} Band"
-        if len(self) > 0:
-            title += "s"
-
-        return title
-
-    def _as_table(self, title: bool = False) -> Table:
-
-        table = Table(row_styles=["yellow", "cyan"])
-
-        if title:
-            table.title = self._generate_title()
-
-        table.add_column("Number", justify="right")
-        table.add_column("Abbreviation", justify="left")
-        table.add_column("Name")
-        table.add_column(
-            f"Resolution ({get_meta_unit(list(self.__dict__.values())[0],'resolution')})",
-            justify="right",
-        )
-        table.add_column(
-            f"Wavelength ({get_meta_unit(list(self.__dict__.values())[0],'wavelength')})",
-            justify="right",
-        )
-        table.add_column("Sensor", justify="right")
-
-        for band in self:
-            table.add_row(
-                str(band.number),
-                str(band.abbreviation),
-                str(band.name),
-                str(band.resolution),
-                str(band.wavelength),
-                str(band.sensor),
-            )
-
-        return table
-
+class Bands(Base):
     def __len__(self) -> int:
         return len(self.__annotations__)
 
@@ -120,7 +88,7 @@ class Bands:
 
 
 @dataclass()
-class Platform:
+class Platform(Base):
     abbreviation: str
     name: str
     var_name: str = field(default="", init=False)
@@ -147,66 +115,7 @@ class Platform:
         )
         self.bands = platform_bands()
         self.number_bands = len(cast(Sized, self.bands))
-        self.var_name = self.name.replace(" ", "")
-
-        return None
-
-    def info(self, show_description: bool = True) -> None:
-
-        table = Table(
-            show_header=False,
-            show_lines=False,
-            show_edge=False,
-            expand=True,
-            row_styles=["", "dim"],
-        )
-
-        table.add_column(justify="right", width=30)
-        table.add_column(justify="left", width=30)
-        table.add_row("Operator", f"{self.operator}")
-        table.add_row("Constellation", f"{self.constellation}")
-        table.add_row("Launch Date", f"{self.launch_date}")
-        table.add_row("Regime", f"{self.regime}")
-        table.add_row(
-            "Orbit Time", f"{self.orbit_time} {get_meta_unit(self,'orbit_time')}"
-        )
-
-        if self.inclination:
-            table.add_row(
-                "Inclination", f"{self.inclination} {get_meta_unit(self,'inclination')}"
-            )
-
-        table.add_row(
-            "Revisit Time", f"{self.revisit_time} {get_meta_unit(self,'revisit_time')}"
-        )
-        table.add_row("Altitude", f"{self.altitude} {get_meta_unit(self, 'altitude')}")
-        table.add_row(
-            "Scene Size", f"{self.scene_size} {get_meta_unit(self, 'scene_size')}"
-        )
-        Panel(
-            f"""
-            [wheat4 center][bold]{self.name}[/bold] [italic]({self.abbreviation})[/italic]
-        
-            """
-        )
-
-        band_table = cast(Bands, self.bands)._as_table(title=True)
-
-        description: Text = Text("")
-        if show_description:
-            description = Text(self.description, justify="full", end="\n\n")
-
-        group: Group = Group(Align.center(table), band_table, description, fit=False)
-        panel: Panel = Panel(
-            group,
-            expand=False,
-            title=f"[wheat4][bold]🛰️ {self.name}[/bold] [italic]({self.abbreviation})[/italic]",
-            width=100,
-        )
-        if self.data_source:
-            panel.subtitle = f"[blue underline][link={self.data_source}]Source[/link]"
-
-        console.print(panel)
+        self.var_name = self.name.replace(" ", "").lower()
 
         return None
 
