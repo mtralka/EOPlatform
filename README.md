@@ -53,6 +53,8 @@ pip install git+git://github.com/mtralka/eoplatform
 
 #### CLI
 
+`PLATFORM` argument is case-insensitive
+
 ```sh
 Usage: eoplatform info [OPTIONS] PLATFORM
 
@@ -68,13 +70,13 @@ Options:
 EX:
 
 ```sh
-eoplatform info Landsat8
+eoplatform info landsat8
 ```
 
 show all info *eoplatform* has on `Landsat8`
 
 ```sh
-eoplatform info Landsat8 -b
+eoplatform info landsat8 -b
 ```
 
 shows only `Landsat8`'s bands
@@ -84,9 +86,9 @@ shows only `Landsat8`'s bands
 You can import your desired platform
 
 ```python
-from eoplatform import Landsat8
+from eoplatform import landsat8
 
-Landsat8.info()  # OR print(Landsat8)
+landsat8.info()  # OR print(landsat8)
 ```
 
 or search from the *eoplatform* module itself
@@ -94,7 +96,7 @@ or search from the *eoplatform* module itself
 ```python
 import eoplatform as eop
 
-eop.info("Landsat8")
+eop.info("Landsat8")  # case insensitive
 ```
 
 ### Downloading platform scenes
@@ -118,15 +120,15 @@ Options:
  in-progress
 
  ```python
-from eoplatform import Landsat8
+from eoplatform import landsat8
 
-Landsat8.download()
+landsat8.download()
 ```
 
 ```python
 import eoplatform as eop
 
-eop.download("Landsat8")
+eop.download("landsat8")
 ```
 
 both methods accept the full range of search keword arguments
