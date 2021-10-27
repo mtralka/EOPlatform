@@ -49,14 +49,14 @@ pip install git+git://github.com/mtralka/eoplatform
 
 *eoplatform* is fully accessible through the command line (CLI) and as a module import.
 
-### CLI
+### Querying platform info (cli)
+
+#### CLI
 
 Commands:
 
 * `info` - find platform info
 * `download` - download platform scenes
-
-#### Querying platform info (cli)
 
 ```sh
 Usage: eoplatform info [OPTIONS] PLATFORM
@@ -84,23 +84,7 @@ eoplatform info Landsat8 -b
 
 shows only `Landsat8`'s bands
 
-#### Downloading platform scenes (cli)
-
-in-progress
-
-```sh
-Usage: eoplatform download [OPTIONS] PLATFORM
-
-Arguments:
-  PLATFORM  [required]
-
-Options:
-  --help  Show this message and exit.
-```
-
-### Module import
-
-#### Querying platform info (import)
+#### Module import
 
 You can import your desired platform
 
@@ -118,7 +102,23 @@ import eoplatform as eop
 eop.info("Landsat8")
 ```
 
-#### Downloading platform scenes (import)
+### Downloading platform scenes
+
+#### CLI
+
+in-progress
+
+```sh
+Usage: eoplatform download [OPTIONS] PLATFORM
+
+Arguments:
+  PLATFORM  [required]
+
+Options:
+  --help  Show this message and exit.
+```
+
+#### Module import
 
  in-progress
 
@@ -145,9 +145,9 @@ See the [open issues](https://github.com/mtralka/EOPlatform/issues) for a list o
 
 ## Contributing
 
-Contributions are welcome. Any contributions you make are appreciated.
+Contributions are welcome. Currently, *eoplatform* is undergoing rapid development and contribution opportunities may be scarce.
 
-* If you have suggestions for adding or removing projects, feel free to [open an issue](https://github.com/mtralka/EOPlatform/issues/new) to discuss it, or directly create a pull request with the proposed changes.
+* If you have suggestions for adding or removing features, feel free to [open an issue](https://github.com/mtralka/EOPlatform/issues/new) to discuss it, or directly create a pull request with the proposed changes.
 * Create individual PR for each suggestion.
 * Use pre-commit hooks - `pre-commit install`
 * Code style is `black`, `mypy --strict`
