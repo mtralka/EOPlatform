@@ -2,6 +2,9 @@ from dataclasses import InitVar
 from dataclasses import dataclass
 from dataclasses import field
 from dataclasses import make_dataclass
+from re import sub
+import sys
+import types
 from typing import Any
 from typing import Dict
 from typing import Iterator
@@ -18,19 +21,16 @@ from rich.panel import Panel
 from rich.table import Table
 from rich.text import Text
 
+from eoplatform.console import console
+from eoplatform.info.visualizers import ReturnRender
 
-import sys
 
 if sys.version_info >= (3, 8, 0):
     from typing import Final  # type: ignore
 else:
     from typing_extensions import Final
 
-from eoplatform.info.visualizers import (
-    visualize_platform,
-    visualize_band,
-    visualize_bands,
-)
+from eoplatform.info.visualizers import InfoVisualizers
 
 
 class Base:
@@ -38,22 +38,39 @@ class Base:
     def get_meta_unit(object: Any, attribute_name: str) -> str:
         return str(object.__dataclass_fields__[attribute_name].metadata["unit"])
 
-    def info(self, show_description: bool = True, title=False) -> None:
+    def info(self, show_description: bool = True, title: bool = False) -> None:
 
-        if isinstance(self, Bands):
-            return
-
-        if isinstance(self, Platform):
-            return
         VISUALIZERS: Final[dict] = {
-            Band: visualize_band,
-            Bands: visualize_bands,
-            Platform: visualize_platform,
+            Band: InfoVisualizers.get_band_viz,
+            Platform: InfoVisualizers.get_platform_viz,
         }
 
-        VISUALIZERS[type(self)](self, show_description=show_description, title=title)
+        # Todo fix typing so this works smoothly with `Bands`
+        render: ReturnRender
+        if isinstance(self, Bands):
+            render = InfoVisualizers.get_bands_viz(
+                self, show_description=show_description, title=title
+            )
+        else:
+            render = VISUALIZERS[type(self)](
+                self, show_description=show_description, title=title
+            )
+
+        console.print(
+            Panel(
+                render.renderable,
+                expand=False,
+                title=render.title,
+                subtitle=render.subtitle,
+                width=100,
+            )
+        )
 
         return None
+
+    def __str__(self) -> str:
+        self.info()
+        return ""
 
 
 @dataclass
@@ -66,21 +83,11 @@ class Band(Base):
     sensor: str
     resolution: int = field(metadata={"unit": "m"})
 
-    def __str__(self) -> str:
-        self.info()
-
-        return ""
-
 
 @dataclass
 class Bands(Base):
     def __len__(self) -> int:
         return len(self.__annotations__)
-
-    def __str__(self) -> str:
-
-        self.info()
-        return ""
 
     def __iter__(self) -> Iterator[Band]:
         for band in self.__dict__.values():
@@ -124,8 +131,3 @@ class Platform(Base):
 
     def __len__(self) -> Optional[int]:
         return self.number_bands
-
-    def __str__(self) -> str:
-
-        self.info()
-        return ""
