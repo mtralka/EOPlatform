@@ -1,1 +1,1 @@
-from eoplatform.composites.composites import NDVI
+# from eoplatform.composites.composites import NDVI

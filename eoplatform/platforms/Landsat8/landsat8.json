@@ -1,7 +1,12 @@
 {
   "abbreviation": "L8",
-  "altitude": 705,
-  "bands_list": [
+  "altitude": {
+    "meta": {
+      "unit": "km"
+    },
+    "value": 705
+  },
+  "bands": [
     {
       "abbreviation": "CAER",
       "description": "Band 1 senses deep blues and violets. Blue light is hard to collect from space because it\u2019s scattered easily by tiny bits of dust and water in the air, and even by air molecules themselves. This is one reason why very distant things (like mountains on the horizon) appear blueish, and why the sky is blue. Just as we see a lot of hazy blue when we look up at space on a sunny day, Landsat 8 sees the sky below it when it looks down at us through the same air. That part of the spectrum is hard to collect with enough sensitivity to be useful, and Band 1 is the only instrument of its kind producing open data at this resolution \u2013 one of many things that make this satellite special. It\u2019s also called the coastal/aerosol band, after its two main uses: imaging shallow water, and tracking fine particles like dust and smoke. By itself, its output looks a lot like Band 2 (normal blue)\u2019s, but if we contrast them and highlight areas with more deep blue, we can see differences",
@@ -108,8 +113,23 @@
   "launch_date": "02/11/2013",
   "name": "Landsat 8",
   "operator": "NASA/USGS",
-  "orbit_time": 99,
+  "orbit_time": {
+    "meta": {
+      "unit": "minutes"
+    },
+    "value": 99
+  },
   "regime": "Sun-synchronous orbit",
-  "revisit_time": 16,
-  "scene_size": "(185,180)"
+  "revisit_time": {
+    "meta": {
+      "unit": "days"
+    },
+    "value": 16
+  },
+  "scene_size": {
+    "meta": {
+      "unit": "km"
+    },
+    "value": "(185,180)"
+  }
 }

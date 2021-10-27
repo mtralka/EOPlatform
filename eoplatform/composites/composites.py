@@ -1,22 +1,22 @@
-from abc import ABC
-from abc import abstractclassmethod
+# from abc import ABC
+# from abc import abstractclassmethod
 
 
-class Composite(ABC):
-    @staticmethod
-    @abstractclassmethod
-    def info():
-        return
+# class Composite(ABC):
+#     @staticmethod
+#     @abstractclassmethod
+#     def info():
+#         return
 
-    @staticmethod
-    @abstractclassmethod
-    def create():
-        return "OG"
+#     @staticmethod
+#     @abstractclassmethod
+#     def create():
+#         return "OG"
 
 
-class NDVI(Composite):
-    def info():
-        return "Info"
+# class NDVI(Composite):
+#     def info():
+#         return "Info"
 
-    def create():
-        return "Create"
+#     def create():
+#         return "Create"

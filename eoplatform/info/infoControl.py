@@ -12,7 +12,6 @@ def info(name: str, only_bands: bool = False, show_description: bool = True) -> 
     platform: Optional[Platform] = EOPlatformFactory.generate_platform(
         name.lower().strip()
     )
-
     # walrus operator on 3.8+
     if not platform:
         console.print(

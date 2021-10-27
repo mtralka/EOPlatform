@@ -8,6 +8,8 @@ from eoplatform.info.infoControl import info
 
 __version__ = "0.1.2"
 
+for platform in factory.generate_all_platforms():
+    locals()[platform.var_name] = platform
 
 # for name in factory._find_platform_names():
 #     plat = factory.generate_platform(str(name))

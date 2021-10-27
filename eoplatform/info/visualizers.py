@@ -1,12 +1,21 @@
 from dataclasses import dataclass
+from dataclasses import fields
+import sys
 from typing import Any
+from typing import Dict
+from typing import List
 from typing import Optional
 
-from rich.align import Align
 from rich.console import Group
 from rich.console import RenderableType
 from rich.table import Table
 from rich.text import Text
+
+
+if sys.version_info >= (3, 8, 0):
+    from typing import Final  # type: ignore
+else:
+    from typing_extensions import Final
 
 
 @dataclass
@@ -81,6 +90,16 @@ class InfoVisualizers:
     ) -> ReturnRender:
         """Visualizer for `Platform`"""
 
+        NO_PRINT_ATTRIBUTES: Final[List[str]] = [
+            "description",
+            "var_name",
+            "abbreviation",
+            "name",
+            "bands",
+            "data_source",
+            "number_bands",
+        ]
+
         table = Table(
             show_header=False,
             show_lines=False,
@@ -91,40 +110,28 @@ class InfoVisualizers:
 
         table.add_column(justify="right", width=30)
         table.add_column(justify="left", width=30)
-        table.add_row("Operator", f"{object.operator}")
-        table.add_row("Constellation", f"{object.constellation}")
-        table.add_row("Launch Date", f"{object.launch_date}")
-        table.add_row("Regime", f"{object.regime}")
-        table.add_row(
-            "Orbit Time",
-            f"{object.orbit_time} {object.get_meta_unit(object,'orbit_time')}",
-        )
 
-        if object.inclination:
+        field_values: Dict[str, str] = {
+            f.name: str(f.default)
+            for f in fields(object)
+            if f.name not in NO_PRINT_ATTRIBUTES
+        }
+        field_values = dict(sorted(field_values.items(), key=lambda kv: kv[0]))
+
+        for name, value in field_values.items():
+
             table.add_row(
-                "Inclination",
-                f"{object.inclination} {object.get_meta_unit(object,'inclination')}",
+                name.capitalize().replace("_", " "),
+                f"{value} {object.get_meta_unit(object,name)}",
             )
-
-        table.add_row(
-            "Revisit Time",
-            f"{object.revisit_time} {object.get_meta_unit(object,'revisit_time')}",
-        )
-        table.add_row(
-            "Altitude", f"{object.altitude} {object.get_meta_unit(object, 'altitude')}"
-        )
-        table.add_row(
-            "Scene Size",
-            f"{object.scene_size} {object.get_meta_unit(object, 'scene_size')}",
-        )
-
-        band_table = InfoVisualizers.get_bands_viz(object.bands).renderable
 
         description: Text = Text("")
         if show_description:
             description = Text(object.description, justify="full", end="\n\n")
 
-        group: Group = Group(Align.center(table), band_table, description, fit=False)
+        band_table: ReturnRender = InfoVisualizers.get_bands_viz(object.bands)
+
+        group: Group = Group(table, band_table.renderable, description, fit=False)
 
         if object.data_source:
             subtitle: str = f"[blue underline][link={object.data_source}]Source[/link]"

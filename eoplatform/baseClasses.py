@@ -1,17 +1,10 @@
-from dataclasses import InitVar
 from dataclasses import dataclass
 from dataclasses import field
-from dataclasses import make_dataclass
 import sys
-import types
 from typing import Any
-from typing import Dict
 from typing import Iterator
-from typing import List
 from typing import Optional
 from typing import Sized
-from typing import Tuple
-from typing import Union
 from typing import cast
 
 from rich.panel import Panel
@@ -31,25 +24,21 @@ from eoplatform.info.visualizers import InfoVisualizers
 class Base:
     @staticmethod
     def get_meta_unit(object: Any, attribute_name: str) -> str:
-        return str(object.__dataclass_fields__[attribute_name].metadata["unit"])
+        return str(object.__dataclass_fields__[attribute_name].metadata.get("unit", ""))
 
     def info(self, show_description: bool = True, title: bool = False) -> None:
 
         VISUALIZERS: Final[dict] = {
             Band: InfoVisualizers.get_band_viz,
+            Bands: InfoVisualizers.get_bands_viz,
             Platform: InfoVisualizers.get_platform_viz,
         }
 
-        # TODO fix typing so this works smoothly with `Bands`
         render: ReturnRender
-        if isinstance(self, Bands):
-            render = InfoVisualizers.get_bands_viz(
-                self, show_description=show_description, title=title
-            )
-        else:
-            render = VISUALIZERS[type(self)](
-                self, show_description=show_description, title=title
-            )
+        for k, v in VISUALIZERS.items():
+            if isinstance(self, k):
+                render = v(self, show_description=show_description, title=title)
+                break
 
         console.print(
             Panel(
@@ -93,31 +82,13 @@ class Bands(Base):
 class Platform(Base):
     abbreviation: str
     name: str
-    var_name: str = field(default="", init=False)
-    operator: str
-    bands_list: InitVar[List[Dict[str, Union[str, int]]]]
-    description: str
-    revisit_time: int = field(metadata={"unit": "days"})
-    orbit_time: int = field(metadata={"unit": "minutes"})
-    altitude: int = field(metadata={"unit": "km"})
-    scene_size: Tuple[str, str] = field(metadata={"unit": "km"})
-    regime: str
-    constellation: str
-    launch_date: str = field(metadata={"unit": "MM/DD/YYYY"})
+    var_name: str = field(default="NONE", init=False)
     number_bands: Optional[int] = field(default=None, init=False)
     bands: Optional[Bands] = field(default=None, init=False)
-    data_source: Optional[str] = field(default=None)
-    inclination: Optional[str] = field(default=None, metadata={"unit": "deg"})
 
-    def __post_init__(self, bands_list: List[Dict[str, Any]]) -> None:
-        platform_bands: type = make_dataclass(
-            "Bands",
-            [(b["abbreviation"], Band, field(default=Band(**b))) for b in bands_list],  # type: ignore
-            bases=(Bands,),
-        )
-        self.bands = platform_bands()
-        self.number_bands = len(cast(Sized, self.bands))
+    def __post_init__(self) -> None:
         self.var_name = self.name.replace(" ", "").lower()
+        self.number_bands = len(cast(Sized, self.bands)) if self.bands else 0
 
         return None
 
