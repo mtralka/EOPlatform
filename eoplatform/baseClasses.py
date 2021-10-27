@@ -2,7 +2,6 @@ from dataclasses import InitVar
 from dataclasses import dataclass
 from dataclasses import field
 from dataclasses import make_dataclass
-from re import sub
 import sys
 import types
 from typing import Any
@@ -15,11 +14,7 @@ from typing import Tuple
 from typing import Union
 from typing import cast
 
-from rich.align import Align
-from rich.console import Group
 from rich.panel import Panel
-from rich.table import Table
-from rich.text import Text
 
 from eoplatform.console import console
 from eoplatform.info.visualizers import ReturnRender
@@ -45,7 +40,7 @@ class Base:
             Platform: InfoVisualizers.get_platform_viz,
         }
 
-        # Todo fix typing so this works smoothly with `Bands`
+        # TODO fix typing so this works smoothly with `Bands`
         render: ReturnRender
         if isinstance(self, Bands):
             render = InfoVisualizers.get_bands_viz(
@@ -125,9 +120,6 @@ class Platform(Base):
         self.var_name = self.name.replace(" ", "").lower()
 
         return None
-
-    def metadata(self, attribute_name: str) -> str:
-        return str(self.__dataclass_fields__[attribute_name].metadata)  # type: ignore
 
     def __len__(self) -> Optional[int]:
         return self.number_bands

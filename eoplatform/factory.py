@@ -1,12 +1,9 @@
-from importlib import resources
 import json
-from os import stat
 from pathlib import Path
 import sys
 from typing import Any
 from typing import Dict
 from typing import Generator
-from typing import Iterator
 from typing import List
 from typing import Optional
 from typing import Union
@@ -21,19 +18,28 @@ if sys.version_info >= (3, 8, 0):
 else:
     from typing_extensions import Final
 
+PLATFORM_PATH: Final[str] = "eoplatform.platforms"
+
 
 class EOPlatformFactory:
-    @staticmethod
-    def generate_platform() -> Generator[Platform, None, None]:
+    """On-demand platform factory"""
 
-        platform_paths: Generator[
-            Path, None, None
-        ] = EOPlatformFactory._find_platform_files()
-        for name in platform_paths:
-            platform_data: Dict[
-                str, Union[str, int]
-            ] = EOPlatformFactory._get_platform_data(name)
-            yield EOPlatformFactory._produce_platform(platform_data)
+    @staticmethod
+    def generate_platform(name: str) -> Optional[Platform]:
+
+        target_platform: Path
+        for platform in EOPlatformFactory._find_platform_files():
+            if platform.stem == name:
+                target_platform = platform
+                break
+        else:
+            return None
+
+        platform_data: Dict[
+            str, Union[str, int]
+        ] = EOPlatformFactory._get_platform_data(target_platform)
+
+        return EOPlatformFactory._produce_platform(platform_data)
 
     @staticmethod
     def _find_platform_files() -> Generator[Path, None, None]:
@@ -41,9 +47,16 @@ class EOPlatformFactory:
         return cast(Generator[Path, None, None], PLATFORMS_DIR.glob(PATTERN))
 
     @staticmethod
-    def _get_platform_data(platform_file: Path) -> Dict[str, Union[str, int]]:
-        with open(platform_file, "r") as file:
+    def _find_platform_names() -> List[str]:
+        PATTERN: Final[str] = "**/*.json"
+        return [f.stem for f in PLATFORMS_DIR.glob(PATTERN)]
+
+    @staticmethod
+    def _get_platform_data(platform_path: Path) -> Dict[str, Union[str, int]]:
+
+        with open(str(platform_path), "r") as file:
             data: Dict[str, Union[str, int]] = json.load(file)
+
         return data
 
     @staticmethod
@@ -51,40 +64,30 @@ class EOPlatformFactory:
         return Platform(**platform_dict)
 
 
-# ON DEMAND
-# PLATFORM_PATH: Final[str] = "eoplatform.platforms"
-
 # class EOPlatformFactory:
 #     @staticmethod
-#     def generate_platform(name: str) -> Optional[Platform]:
+#     def generate_platform() -> Generator[Platform, None, None]:
 
-#         if name not in EOPlatformFactory._get_platform_names():
-#             return None
-
-#         platform_data: Dict[
-#             str, Union[str, int]
-#         ] = EOPlatformFactory._get_platform_data(name)
-
-#         return EOPlatformFactory._produce_platform(platform_data)
+#         platform_paths: Generator[
+#             Path, None, None
+#         ] = EOPlatformFactory._find_platform_files()
+#         for name in platform_paths:
+#             platform_data: Dict[
+#                 str, Union[str, int]
+#             ] = EOPlatformFactory._get_platform_data(name)
+#             yield EOPlatformFactory._produce_platform(platform_data)
 
 #     @staticmethod
-#     def _get_platform_names() -> List[str]:
+#     def _find_platform_files() -> Generator[Path, None, None]:
 #         PATTERN: Final[str] = "**/*.json"
-#         return [f.stem for f in PLATFORMS_DIR.glob(PATTERN)]
+#         return cast(Generator[Path, None, None], PLATFORMS_DIR.glob(PATTERN))
 
 #     @staticmethod
-#     def _get_platform_data(platform_name: str) -> Dict[str, Union[str, int]]:
-
-#         with resources.open_text(PLATFORM_PATH, platform_name + ".json") as file:
+#     def _get_platform_data(platform_file: Path) -> Dict[str, Union[str, int]]:
+#         with open(platform_file, "r") as file:
 #             data: Dict[str, Union[str, int]] = json.load(file)
-
 #         return data
 
-# @staticmethod
-# def _find_platform_names() -> Generator[Path, None, None]:
-#     PATTERN: Final[str] = "**/*.json"
-#     return PLATFORMS_DIR.glob(PATTERN)
-
-# @staticmethod
-# def _produce_platform(platform_dict: Dict[str, Any]) -> Platform:
-#     return Platform(**platform_dict)
+#     @staticmethod
+#     def _produce_platform(platform_dict: Dict[str, Any]) -> Platform:
+#         return Platform(**platform_dict)

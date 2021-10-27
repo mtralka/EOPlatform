@@ -11,6 +11,8 @@ from rich.text import Text
 
 @dataclass
 class ReturnRender:
+    """Dataclass of visualization options dervied from `Band`, `Bands`, and `Platform`"""
+
     renderable: RenderableType
     title: Optional[str]
     subtitle: Optional[str]
@@ -19,6 +21,7 @@ class ReturnRender:
 class InfoVisualizers:
     @staticmethod
     def get_band_viz(object: Any, **kwargs: Any) -> ReturnRender:
+        """Visualizer for `Band`"""
 
         table: Table = Table(show_header=False, show_edge=False)
         table.add_column(justify="right")
@@ -39,6 +42,7 @@ class InfoVisualizers:
 
     @staticmethod
     def get_bands_viz(object: Any, **kwargs: Any) -> ReturnRender:
+        """Visualizer for `Bands`"""
 
         table = Table(row_styles=["yellow", "cyan"])
 
@@ -75,6 +79,7 @@ class InfoVisualizers:
     def get_platform_viz(
         object: Any, show_description: bool, **kwargs: Any
     ) -> ReturnRender:
+        """Visualizer for `Platform`"""
 
         table = Table(
             show_header=False,
@@ -125,4 +130,5 @@ class InfoVisualizers:
             subtitle: str = f"[blue underline][link={object.data_source}]Source[/link]"
 
         title: str = f"[wheat4][bold]🛰️ {object.name}[/bold] [italic]({object.abbreviation})[/italic]"
+
         return ReturnRender(renderable=group, title=title, subtitle=subtitle)
