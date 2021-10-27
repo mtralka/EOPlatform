@@ -20,26 +20,25 @@
 
 ## About
 
-*eoplatform* is a Python package that aims to simplify Remote Sensing Earth Observation by providing actionable information on a wide swath of RS platforms and provide a simple API for downloading and visualizing RS imagery. Made for scientsits, educators, and hobbiests alike.
+*eoplatform* is a Python package that aims to simplify Remote Sensing Earth Observation by providing actionable information on a wide swath of RS platforms and provide a simple API for downloading and visualizing RS imagery. Made for scientists, educators, and hobbiests alike.
 
 * Easy to access **information** on RS platforms
   * Band information
   * Orbit regimes
   * Scene statistics
+
+Coming soon
 * Accessible data downloading (in-progress)
   * Landsat 8
   * Sentinel-2
-* Common band composites
+* Common band composites information
+* Raster tools
+  *  Band composite creators
+  *  Raster IO functions
 
 ### Installation
 
 `eoplatform` can be installed by running `pip install eoplatform`. It requires Python 3.7 or above to run. 
-
-If you want to install the latest version from git you can run 
-
-```sh
-pip install git+git://github.com/mtralka/eoplatform
-```
 
 ### Example
 
@@ -49,14 +48,11 @@ pip install git+git://github.com/mtralka/eoplatform
 
 *eoplatform* is fully accessible through the command line (CLI) and as a module import.
 
-### CLI
+### Querying platform info
 
-Commands:
+#### CLI
 
-* `info` - find platform info
-* `download` - download platform scenes
-
-#### Querying platform info (cli)
+`PLATFORM` argument is case-insensitive
 
 ```sh
 Usage: eoplatform info [OPTIONS] PLATFORM
@@ -73,18 +69,38 @@ Options:
 EX:
 
 ```sh
-eoplatform info Landsat8
+eoplatform info landsat8
 ```
 
 show all info *eoplatform* has on `Landsat8`
 
 ```sh
-eoplatform info Landsat8 -b
+eoplatform info landsat8 -b
 ```
 
 shows only `Landsat8`'s bands
 
-#### Downloading platform scenes (cli)
+#### Module import
+
+You can import your desired platform
+
+```python
+from eoplatform import landsat8
+
+landsat8.info()  # OR print(landsat8)
+```
+
+or search from the *eoplatform* module itself
+
+```python
+import eoplatform as eop
+
+eop.info("Landsat8")  # case insensitive
+```
+
+### Downloading platform scenes
+
+#### CLI
 
 in-progress
 
@@ -98,40 +114,20 @@ Options:
   --help  Show this message and exit.
 ```
 
-### Module import
-
-#### Querying platform info (import)
-
-You can import your desired platform
-
-```python
-from eoplatform import Landsat8
-
-Landsat8.info()  # OR print(Landsat8)
-```
-
-or search from the *eoplatform* module itself
-
-```python
-import eoplatform as eop
-
-eop.info("Landsat8")
-```
-
-#### Downloading platform scenes (import)
+#### Module import
 
  in-progress
 
  ```python
-from eoplatform import Landsat8
+from eoplatform import landsat8
 
-Landsat8.download()
+landsat8.download()
 ```
 
 ```python
 import eoplatform as eop
 
-eop.download("Landsat8")
+eop.download("landsat8")
 ```
 
 both methods accept the full range of search keword arguments
@@ -145,9 +141,9 @@ See the [open issues](https://github.com/mtralka/EOPlatform/issues) for a list o
 
 ## Contributing
 
-Contributions are welcome. Any contributions you make are appreciated.
+Contributions are welcome. Currently, *eoplatform* is undergoing rapid development and contribution opportunities may be scarce.
 
-* If you have suggestions for adding or removing projects, feel free to [open an issue](https://github.com/mtralka/EOPlatform/issues/new) to discuss it, or directly create a pull request with the proposed changes.
+* If you have suggestions for adding or removing features, feel free to [open an issue](https://github.com/mtralka/EOPlatform/issues/new) to discuss it, or directly create a pull request with the proposed changes.
 * Create individual PR for each suggestion.
 * Use pre-commit hooks - `pre-commit install`
 * Code style is `black`, `mypy --strict`
