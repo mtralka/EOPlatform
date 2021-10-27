@@ -35,12 +35,6 @@
 
 `eoplatform` can be installed by running `pip install eoplatform`. It requires Python 3.7 or above to run. 
 
-If you want to install the latest version from git you can run 
-
-```sh
-pip install git+git://github.com/mtralka/eoplatform
-```
-
 ### Example
 
 <img src="images/eoplatform-info-landsat8.PNG" alt="Landsat8 Info" width="600">
