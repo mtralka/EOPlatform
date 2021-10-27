@@ -1,15 +1,10 @@
 from dataclasses import dataclass
-from re import sub
 from typing import Any
 from typing import Optional
-from typing import Union
-from typing import cast
 
-from eoplatform.console import console
 from rich.align import Align
 from rich.console import Group
 from rich.console import RenderableType
-from rich.panel import Panel
 from rich.table import Table
 from rich.text import Text
 
@@ -24,6 +19,7 @@ class ReturnRender:
 class InfoVisualizers:
     @staticmethod
     def get_band_viz(object: Any, **kwargs: Any) -> ReturnRender:
+
         table: Table = Table(show_header=False, show_edge=False)
         table.add_column(justify="right")
         table.add_column(justify="left")
@@ -73,7 +69,6 @@ class InfoVisualizers:
                 str(band.sensor),
             )
 
-        # console.print(Panel(table, expand=False, title=title_name))
         return ReturnRender(renderable=table, title=title, subtitle=None)
 
     @staticmethod
@@ -117,12 +112,6 @@ class InfoVisualizers:
             "Scene Size",
             f"{object.scene_size} {object.get_meta_unit(object, 'scene_size')}",
         )
-        # Panel(
-        #     f"""
-        #     [wheat4 center][bold]{object.name}[/bold] [italic]({object.abbreviation})[/italic]
-
-        #     """
-        # )
 
         band_table = InfoVisualizers.get_bands_viz(object.bands).renderable
 
@@ -131,12 +120,7 @@ class InfoVisualizers:
             description = Text(object.description, justify="full", end="\n\n")
 
         group: Group = Group(Align.center(table), band_table, description, fit=False)
-        # panel: Panel = Panel(
-        #     # group,
-        #     expand=False,
-        #     title=f"[wheat4][bold]🛰️ {object.name}[/bold] [italic]({object.abbreviation})[/italic]",
-        #     width=100,
-        # )
+
         if object.data_source:
             subtitle: str = f"[blue underline][link={object.data_source}]Source[/link]"
 

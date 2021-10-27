@@ -1,6 +1,4 @@
 from eoplatform.download.downloadControl import download
-
-# from eoplatform.factory import EOPlatformFactory as factory
 from eoplatform.info.infoControl import info
 from eoplatform.platform import *
 
