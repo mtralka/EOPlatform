@@ -49,7 +49,7 @@ pip install git+git://github.com/mtralka/eoplatform
 
 *eoplatform* is fully accessible through the command line (CLI) and as a module import.
 
-### Querying platform info (cli)
+### Querying platform info
 
 #### CLI
 
