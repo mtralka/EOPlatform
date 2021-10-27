@@ -20,16 +20,21 @@
 
 ## About
 
-*eoplatform* is a Python package that aims to simplify Remote Sensing Earth Observation by providing actionable information on a wide swath of RS platforms and provide a simple API for downloading and visualizing RS imagery. Made for scientsits, educators, and hobbiests alike.
+*eoplatform* is a Python package that aims to simplify Remote Sensing Earth Observation by providing actionable information on a wide swath of RS platforms and provide a simple API for downloading and visualizing RS imagery. Made for scientists, educators, and hobbiests alike.
 
 * Easy to access **information** on RS platforms
   * Band information
   * Orbit regimes
   * Scene statistics
+
+Coming soon
 * Accessible data downloading (in-progress)
   * Landsat 8
   * Sentinel-2
-* Common band composites
+* Common band composites information
+* Raster tools
+  *  Band composite creators
+  *  Raster IO functions
 
 ### Installation
 
