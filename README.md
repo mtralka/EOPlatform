@@ -53,11 +53,6 @@ pip install git+git://github.com/mtralka/eoplatform
 
 #### CLI
 
-Commands:
-
-* `info` - find platform info
-* `download` - download platform scenes
-
 ```sh
 Usage: eoplatform info [OPTIONS] PLATFORM
 
