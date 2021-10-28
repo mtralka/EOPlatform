@@ -1,8 +1,8 @@
 import typer
 
 from eoplatform.main import *
-from eoplatform.download.downloadControl import download
-from eoplatform.info.infoControl import info
+from eoplatform.platforms.download.downloadControl import download
+from eoplatform.platforms.info.info import info
 
 
 app = typer.Typer()

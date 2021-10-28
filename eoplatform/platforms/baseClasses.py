@@ -7,18 +7,16 @@ from typing import Optional
 from typing import Sized
 from typing import cast
 
-from rich.panel import Panel
-
 from eoplatform.console import console
-from eoplatform.info.visualizers import ReturnRender
+from eoplatform.platforms.info.visualizers import InfoVisualizers
+from eoplatform.platforms.info.visualizers import ReturnRender
+from rich.panel import Panel
 
 
 if sys.version_info >= (3, 8, 0):
     from typing import Final  # type: ignore
 else:
     from typing_extensions import Final
-
-from eoplatform.info.visualizers import InfoVisualizers
 
 
 class Base:
