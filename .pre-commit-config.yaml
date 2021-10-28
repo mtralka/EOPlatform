@@ -21,3 +21,4 @@ repos:
     hooks:
     -   id: mypy
         args: [--strict, --ignore-missing-imports, --allow-untyped-decorators]
+        additional_dependencies: [numpy == 1.21.3]
