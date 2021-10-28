@@ -1,13 +1,11 @@
-from dataclasses import dataclass
 from dataclasses import fields
 import sys
 from typing import Any
 from typing import Dict
 from typing import List
-from typing import Optional
 
+from eoplatform.sharedClasses import ReturnRender
 from rich.console import Group
-from rich.console import RenderableType
 from rich.table import Table
 from rich.text import Text
 
@@ -16,15 +14,6 @@ if sys.version_info >= (3, 8, 0):
     from typing import Final  # type: ignore
 else:
     from typing_extensions import Final
-
-
-@dataclass
-class ReturnRender:
-    """Dataclass of visualization options dervied from `Band`, `Bands`, and `Platform`"""
-
-    renderable: RenderableType
-    title: Optional[str]
-    subtitle: Optional[str]
 
 
 class InfoVisualizers:

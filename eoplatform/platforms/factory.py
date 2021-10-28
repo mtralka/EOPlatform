@@ -14,9 +14,9 @@ from typing import Tuple
 from typing import Union
 from typing import cast
 
-from eoplatform.baseClasses import Band
-from eoplatform.baseClasses import Bands
-from eoplatform.baseClasses import Platform
+from eoplatform.platforms.baseClasses import Band
+from eoplatform.platforms.baseClasses import Bands
+from eoplatform.platforms.baseClasses import Platform
 from eoplatform.utils import PLATFORMS_DIR
 
 
@@ -24,8 +24,6 @@ if sys.version_info >= (3, 8, 0):
     from typing import Final  # type: ignore
 else:
     from typing_extensions import Final
-
-PLATFORM_PATH: Final[str] = "eoplatform.platforms"
 
 
 @dataclass
