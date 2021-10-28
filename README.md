@@ -26,15 +26,19 @@
   * Band information
   * Orbit regimes
   * Scene statistics
+  * etc
+* `metadata` module for extracting platform metadata
+  * supports `.txt` and `.xml` files
+* `composites` modules for creating and learning about popular RS band composites
+  * Included so far - NDVI, SR, DVI, EVI, EVI2, NDWI, NBR, NDSI, NDBI
 
-Coming soon
-* Accessible data downloading (in-progress)
+Coming soon:
+
+* Data downloading
   * Landsat 8
   * Sentinel-2
-* Common band composites information
 * Raster tools
-  *  Band composite creators
-  *  Raster IO functions
+  * Raster IO functions
 
 ### Installation
 
@@ -46,7 +50,7 @@ Coming soon
 
 ## Usage
 
-*eoplatform* is fully accessible through the command line (CLI) and as a module import.
+*eoplatform* is accessible through the command line (CLI) and as a module import.
 
 ### Querying platform info
 
@@ -132,12 +136,57 @@ eop.download("landsat8")
 
 both methods accept the full range of search keword arguments
 
+### Band composites
+
+Implemented composites:
+
+* Normalized Difference Vegetation Index (NDVI)
+* Simple Ratio (SR)
+* Difference Vegetation Index (DVI)
+* Enhanced Vegetation Index (EVI)
+* Enhanced Vegetation Index 2 (EVI2)
+* Normalized Difference Water Index (NDWI)
+* Normalized Burn Ratio (NBR)
+* Normalized Difference Snow Index (NDSI)
+* Normalized DIfference Built-Up Index (NDBI)
+
+#### Composite information
+
+```python
+from eoplatform.composites import NDVI  # DVI, etc
+
+NDVI.info()
+```
+
+#### Creating composite
+
+```python
+from eoplatform.composites import NDVI
+
+red_array: np.ndarray = ...
+nir_array: np.ndarray = ...
+
+ndvi: np.ndarray = NDVI.create(nir_array, red_array)
+```
+
+### Metadata extraction
+
+Supports `.txt` and `.xml` files through `extract_XML_metadata` and `extract_TXT_metadata`.
+
+```python
+from eoplatform.metadata import extract_XML_metadata
+
+file_path: str = ...
+target_attributes: List[str] = ...
+
+values: Dict[str, str] = extract_XML_metadata(file_path, target_attributes)
+```
+
 ## Roadmap
 
 See the [open issues](https://github.com/mtralka/EOPlatform/issues) for a list of proposed features (and known issues).
 
 * download support
-
 
 ## Contributing
 
