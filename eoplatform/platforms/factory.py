@@ -97,15 +97,6 @@ class EOPlatformFactory:
             for k, v in platform_dict.items()
         ]
 
-        bands_template: type = make_dataclass(
-            "Bands",
-            [
-                (b["abbreviation"], Band, field(default=cast(Any, Band(**b))))
-                for b in platform_bands
-            ],
-            bases=(Bands,),
-        )
-
         platform_fields: List[Tuple[str, type, Any]] = [
             (
                 n.key,
@@ -114,7 +105,17 @@ class EOPlatformFactory:
             )
             for n in platform_nodes
         ]
-        platform_fields.append(("bands", Bands, field(default=bands_template())))
+
+        if platform_bands:
+            bands_template: type = make_dataclass(
+                "Bands",
+                [
+                    (b["abbreviation"], Band, field(default=cast(Any, Band(**b))))
+                    for b in platform_bands
+                ],
+                bases=(Bands,),
+            )
+            platform_fields.append(("bands", Bands, field(default=bands_template())))
 
         platform_template: type = make_dataclass(
             "Platforms", platform_fields, bases=(Platform,)

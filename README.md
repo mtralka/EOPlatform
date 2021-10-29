@@ -150,6 +150,117 @@ target_attributes: List[str] = ...
 values: Dict[str, str] = extract_XML_metadata(file_path, target_attributes)
 ```
 
+## Adding platforms / composites
+
+Platforms and composites are auto-generated from `/data/(composites,platforms)`. To add platforms or composites, simply create a new json file in the desired directory.
+
+Platforms must have:
+
+```python
+abbreviation: str
+name: str
+```
+
+### Platform
+
+#### Example platform JSON
+
+Standard key with value:
+
+```json
+...
+"abbreviation": "L8",
+//snip
+...
+```
+
+Key with value and metadata:
+
+```json
+"altitude": {
+    "meta": {
+      "unit": "km"
+    },
+    "value": 705
+  }
+//snip
+```
+
+#### Bands standard for Platform key `bands`
+
+Platform key for `bands` must be a list of following the `band` standard. EX:
+
+```json
+"bands": [
+    {
+      "abbreviation": "CAER",
+      "description":"",
+      "name": "Coastal Aerosol",
+      "number": 1,
+      "resolution": "30",
+      "sensor": "OLI",
+      "wavelength": "0.433-0.453"
+    },
+  //snip
+]
+```
+
+#### Band standard for el in `bands`
+
+Each element to `bands` is a `band`. Each band must have:
+
+```python
+number: int
+name: str
+abbreviation: str
+```
+
+### Composites
+
+Composites must have:
+
+```python
+abbreviation: str
+formula: str
+name: str
+reference: str
+type: str  # matching CompositeType
+bands: List[str]
+```
+
+#### Example JSON Composite
+
+```json
+{
+  "abbreviation": "ARI",
+  "bands": [
+    "GREEN",
+    "VRE1"
+  ],
+  "description": "",
+  "formula": "(1 / GREEN) - (1 / VRE1)",
+  "name": "Anthocyanin Reflectance Index",
+  "reference": "https://doi.org/10.1562/0031-8655(2001)074%3C0038:OPANEO%3E2.0.CO;2",
+  "type": "vegetation"
+}
+
+```
+
+#### Composite Types
+
+Possible values for composite `type` key
+
+* VEGETATION
+* BURN
+* WATER
+* SNOW
+* DROUGHT
+* URBAN
+* KERNEL
+* NONE
+
+**For both platforms and composites, all other attributes will be dynamically rendered and shown in `info`**
+
 ## Roadmap
 
 See the [open issues](https://github.com/mtralka/EOPlatform/issues) for a list of proposed features (and known issues).

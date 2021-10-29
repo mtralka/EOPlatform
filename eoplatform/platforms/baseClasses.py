@@ -60,10 +60,10 @@ class Band(Base):
     number: int
     name: str
     abbreviation: str
-    wavelength: str = field(metadata={"unit": "um"})
-    description: str
-    sensor: str
-    resolution: int = field(metadata={"unit": "m"})
+    wavelength: Optional[str] = field(metadata={"unit": "um"})
+    description: Optional[str]
+    sensor: Optional[str]
+    resolution: Optional[int] = field(metadata={"unit": "m"})
 
 
 @dataclass

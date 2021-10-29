@@ -24,15 +24,20 @@ class InfoVisualizers:
         table: Table = Table(show_header=False, show_edge=False)
         table.add_column(justify="right")
         table.add_column(justify="left")
-        table.add_row("Sensor", f"{object.sensor}")
-        table.add_row(
-            "Wavelength",
-            f"{object.wavelength} {object.get_meta_unit(object,'wavelength')}",
-        )
-        table.add_row(
-            "Resolution",
-            f"{object.resolution} {object.get_meta_unit(object, 'resolution')}",
-        )
+
+        if object.sensor:
+            table.add_row("Sensor", f"{object.sensor}")
+
+        if object.wavelength:
+            table.add_row(
+                "Wavelength",
+                f"{object.wavelength} {object.get_meta_unit(object,'wavelength')}",
+            )
+        if object.resolution:
+            table.add_row(
+                "Resolution",
+                f"{object.resolution} {object.get_meta_unit(object, 'resolution')}",
+            )
 
         title: str = f"[wheat4][bold]#{object.number} - {object.name}[/bold] [italic]({object.abbreviation})[/italic]"
 
