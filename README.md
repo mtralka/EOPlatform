@@ -154,6 +154,8 @@ values: Dict[str, str] = extract_XML_metadata(file_path, target_attributes)
 
 Platforms and composites are auto-generated from `/data/(composites,platforms)`. To add platforms or composites, simply create a new json file in the desired directory.
 
+### Platform
+
 Platforms must have:
 
 ```python
@@ -161,17 +163,13 @@ abbreviation: str
 name: str
 ```
 
-### Platform
-
 #### Example platform JSON
 
 Standard key with value:
 
 ```json
-...
 "abbreviation": "L8",
 //snip
-...
 ```
 
 Key with value and metadata:
