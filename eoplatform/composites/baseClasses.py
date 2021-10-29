@@ -3,11 +3,11 @@ from enum import Enum
 from enum import auto
 from typing import List
 from typing import Optional
+from typing import cast
 
 from eoplatform.composites.visualizers import CompositeVisualizers
 from eoplatform.console import console
 from eoplatform.sharedClasses import ReturnRender
-import numpy as np
 import numpy.typing as npt
 from rich.panel import Panel
 
@@ -20,6 +20,7 @@ class CompositeType(Enum):
     DROUGHT = auto()
     URBAN = auto()
     KERNEL = auto()
+    NONE = auto()
 
 
 @dataclass
@@ -47,18 +48,13 @@ class Composite:
 
         return None
 
-    @classmethod
-    def create(cls, **kwargs: npt.NDArray) -> None:  # type: ignore[type-arg]
-        f"""
-        {cls.__doc__}
-        """
-        for band in cls.bands:
+    def create(self, **kwargs: npt.NDArray) -> npt.NDArray:  # type: ignore[type-arg]
+
+        for band in self.bands:
             if band not in kwargs:
                 raise ValueError(f"{band} must be given as a kwarg")
 
-        eval(cls.formula, {}, kwargs)
-
-        ...
+        return cast(npt.NDArray, eval(self.formula, {}, kwargs))  # type: ignore[type-arg]
 
     def __str__(self) -> str:
         self.info()

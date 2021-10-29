@@ -38,7 +38,7 @@ class EOPlatformFactory:
 
     @staticmethod
     def generate_all_platforms() -> Generator[Platform, None, None]:
-        for name in EOPlatformFactory._find_platform_names():
+        for name in EOPlatformFactory.find_platform_names():
             platform: Optional[Platform] = EOPlatformFactory.generate_platform(
                 str(name)
             )
@@ -53,7 +53,7 @@ class EOPlatformFactory:
 
         target_platform: Path
         for platform in EOPlatformFactory._find_platform_files():
-            if platform.stem == name:
+            if platform.stem.upper() == name.upper():
                 target_platform = platform
                 break
         else:
@@ -71,9 +71,9 @@ class EOPlatformFactory:
         return cast(Generator[Path, None, None], PLATFORMS_DIR.glob(PATTERN))
 
     @staticmethod
-    def _find_platform_names() -> List[str]:
+    def find_platform_names() -> List[str]:
         PATTERN: Final[str] = "**/*.json"
-        return [f.stem for f in PLATFORMS_DIR.glob(PATTERN)]
+        return [f.stem.upper() for f in PLATFORMS_DIR.glob(PATTERN)]
 
     @staticmethod
     def _get_platform_data(platform_path: Path) -> Dict[str, Union[str, int]]:
@@ -88,14 +88,14 @@ class EOPlatformFactory:
 
         platform_bands = platform_dict.pop("bands")
 
-        platform_nodes: Dict[str, PlatformNode] = {
-            k: PlatformNode(
+        platform_nodes: List[PlatformNode] = [
+            PlatformNode(
                 key=k,
                 value=v.get("value", v) if isinstance(v, dict) else v,
                 meta=v.get("meta", {}) if isinstance(v, dict) else {},
             )
             for k, v in platform_dict.items()
-        }
+        ]
 
         bands_template: type = make_dataclass(
             "Bands",
@@ -112,7 +112,7 @@ class EOPlatformFactory:
                 cast(type, Any),
                 field(default=n.value, metadata={**cast(Mapping[str, Any], n.meta)}),
             )
-            for n in platform_nodes.values()
+            for n in platform_nodes
         ]
         platform_fields.append(("bands", Bands, field(default=bands_template())))
 

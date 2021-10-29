@@ -8,6 +8,7 @@ if sys.version_info >= (3, 8, 0):
 else:
     from typing_extensions import Final
 
+
 ROOT_DIR: Final[Path]
 with resources.path("eoplatform", "__main__.py") as file:
     ROOT_DIR = file.parent

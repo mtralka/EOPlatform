@@ -1,6 +1,6 @@
+from eoplatform.main import info
 from eoplatform.platforms.download.downloadControl import download
-from eoplatform.platforms.generator import *
-from eoplatform.platforms.info.info import info
+from eoplatform.status import status
 
 
 __version__ = "0.2.1"

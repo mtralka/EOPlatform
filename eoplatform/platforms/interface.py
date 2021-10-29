@@ -1,16 +1,16 @@
 from typing import Optional
 from typing import cast
 
+from eoplatform.console import console
 from eoplatform.platforms.baseClasses import Bands
 from eoplatform.platforms.baseClasses import Platform
-from eoplatform.console import console
 from eoplatform.platforms.factory import EOPlatformFactory
 
 
 def info(name: str, only_bands: bool = False, show_description: bool = True) -> None:
 
     platform: Optional[Platform] = EOPlatformFactory.generate_platform(
-        name.lower().strip()
+        name.upper().strip()
     )
     # walrus operator on 3.8+
     if not platform:
