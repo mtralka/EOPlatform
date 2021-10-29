@@ -1,0 +1,12 @@
+{
+  "abbreviation": "NDSI",
+  "bands": [
+    "GREEN",
+    "SWIR"
+  ],
+  "description": "",
+  "formula": "(GREEN - SWIR) / (GREEN + SWIR)",
+  "name": "Normalized Difference Snow Index",
+  "reference": "https://doi.org/10.1109/IGARSS.1994.399618",
+  "type": "snow"
+}

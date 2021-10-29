@@ -1,0 +1,12 @@
+{
+  "abbreviation": "NGRDI",
+  "bands": [
+    "GREEN",
+    "RED"
+  ],
+  "description": "",
+  "formula": "(GREEN - RED) / (GREEN + RED)",
+  "name": "Normalized Green Red Difference Index",
+  "reference": "https://doi.org/10.1016/0034-4257(79)90013-0",
+  "type": "vegetation"
+}

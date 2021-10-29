@@ -1,0 +1,13 @@
+{
+  "abbreviation": "MTCI",
+  "bands": [
+    "VRE2",
+    "VRE1",
+    "RED"
+  ],
+  "description": "",
+  "formula": "(VRE2 - VRE1) / (VRE1 - RED)",
+  "name": "MERIS Terrestrial Chlorophyll Index",
+  "reference": "https://doi.org/10.1080/0143116042000274015",
+  "type": "vegetation"
+}

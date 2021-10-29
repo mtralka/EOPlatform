@@ -1,0 +1,13 @@
+{
+  "abbreviation": "ExG",
+  "bands": [
+    "GREEN",
+    "RED",
+    "BLUE"
+  ],
+  "description": "",
+  "formula": "2 * GREEN - RED - BLUE",
+  "name": "Excess Green Index",
+  "reference": "https://doi.org/10.13031/2013.27838",
+  "type": "vegetation"
+}

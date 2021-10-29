@@ -1,0 +1,13 @@
+{
+  "abbreviation": "TTVI",
+  "bands": [
+    "VRE3",
+    "VRE2",
+    "VRE4"
+  ],
+  "description": "",
+  "formula": "0.5 * ((865.0 - 740.0) * (VRE3 - VRE2) - (VRE4 - VRE2) * (783.0 - 740))",
+  "name": "Transformed Triangular Vegetation Index",
+  "reference": "https://doi.org/10.3390/rs12010016",
+  "type": "vegetation"
+}

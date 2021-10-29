@@ -1,0 +1,12 @@
+{
+  "abbreviation": "NDWI",
+  "bands": [
+    "GREEN",
+    "NIR"
+  ],
+  "description": "",
+  "formula": "(GREEN - NIR) / (GREEN + NIR)",
+  "name": "Normalized Difference Water Index",
+  "reference": "https://doi.org/10.1080/01431169608948714",
+  "type": "water"
+}

@@ -1,0 +1,13 @@
+{
+  "abbreviation": "TRRVI",
+  "bands": [
+    "VRE2",
+    "RED",
+    "NIR"
+  ],
+  "description": "",
+  "formula": "((VRE2 - RED) / (VRE2 + RED)) / (((NIR - RED) / (NIR + RED)) + 1.0)",
+  "name": "Transformed Red Range Vegetation Index",
+  "reference": "https://doi.org/10.3390/rs12152359",
+  "type": "vegetation"
+}

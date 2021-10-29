@@ -1,0 +1,14 @@
+{
+  "abbreviation": "ARVI",
+  "bands": [
+    "NIR",
+    "RED",
+    "gamma",
+    "BLUE"
+  ],
+  "description": "",
+  "formula": "(NIR - (RED - gamma * (RED - BLUE))) / (NIR + (RED - gamma * (RED - BLUE)))",
+  "name": "Atmospherically Resistant Vegetation Index",
+  "reference": "https://doi.org/10.1109/36.134076",
+  "type": "vegetation"
+}

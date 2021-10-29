@@ -1,0 +1,13 @@
+{
+  "abbreviation": "VARI700",
+  "bands": [
+    "VRE1",
+    "RED",
+    "BLUE"
+  ],
+  "description": "",
+  "formula": "(VRE1 - 1.7 * RED + 0.7 * BLUE) / (VRE1 + 1.3 * RED - 1.3 * BLUE)",
+  "name": "Visible Atmospherically Resistant Index (700 nm)",
+  "reference": "https://doi.org/10.1016/S0034-4257(01)00289-9",
+  "type": "vegetation"
+}

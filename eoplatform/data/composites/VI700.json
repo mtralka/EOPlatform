@@ -1,0 +1,12 @@
+{
+  "abbreviation": "VI700",
+  "bands": [
+    "VRE1",
+    "RED"
+  ],
+  "description": "",
+  "formula": "(VRE1 - RED) / (VRE1 + RED)",
+  "name": "Vegetation Index (700 nm)",
+  "reference": "https://doi.org/10.1016/S0034-4257(01)00289-9",
+  "type": "vegetation"
+}

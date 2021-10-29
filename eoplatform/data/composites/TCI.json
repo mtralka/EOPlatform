@@ -1,0 +1,13 @@
+{
+  "abbreviation": "TCI",
+  "bands": [
+    "VRE1",
+    "GREEN",
+    "RED"
+  ],
+  "description": "",
+  "formula": "1.2 * (VRE1 - GREEN) - 1.5 * (RED - GREEN) * (VRE1 / RED) ** 0.5",
+  "name": "Triangular Chlorophyll Index",
+  "reference": "http://dx.doi.org/10.1109/TGRS.2007.904836",
+  "type": "vegetation"
+}

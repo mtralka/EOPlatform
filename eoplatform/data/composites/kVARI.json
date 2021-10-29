@@ -1,0 +1,13 @@
+{
+  "abbreviation": "kVARI",
+  "bands": [
+    "kGG",
+    "kGR",
+    "kGB"
+  ],
+  "description": "",
+  "formula": "(kGG - kGR) / (kGG + kGR - kGB)",
+  "name": "Kernel Visible Atmospherically Resistant Index",
+  "reference": "https://doi.org/10.1126/sciadv.abc7447",
+  "type": "kernel"
+}

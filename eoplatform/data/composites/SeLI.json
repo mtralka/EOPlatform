@@ -1,0 +1,12 @@
+{
+  "abbreviation": "SeLI",
+  "bands": [
+    "VRE4",
+    "VRE1"
+  ],
+  "description": "",
+  "formula": "(VRE4 - VRE1) / (VRE4 + VRE1)",
+  "name": "Sentinel-2 LAI Green Index",
+  "reference": "https://doi.org/10.3390/s19040904",
+  "type": "vegetation"
+}

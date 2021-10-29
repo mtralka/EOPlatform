@@ -1,0 +1,13 @@
+{
+  "abbreviation": "MCARI",
+  "bands": [
+    "VRE1",
+    "RED",
+    "GREEN"
+  ],
+  "description": "",
+  "formula": "((VRE1 - RED) - 0.2 * (VRE1 - GREEN)) * (VRE1 / RED)",
+  "name": "Modified Chlorophyll Absorption in Reflectance Index",
+  "reference": "http://dx.doi.org/10.1016/S0034-4257(00)00113-9",
+  "type": "vegetation"
+}

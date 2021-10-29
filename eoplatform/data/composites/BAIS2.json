@@ -1,0 +1,15 @@
+{
+  "abbreviation": "BAIS2",
+  "bands": [
+    "VRE2",
+    "VRE3",
+    "VRE4",
+    "RED",
+    "SWIR2"
+  ],
+  "description": "",
+  "formula": "(1.0 - ((VRE2 * VRE3 * VRE4) / RED) ** 0.5) * (((SWIR2 - VRE4)/(SWIR2 + VRE4) ** 0.5) + 1.0)",
+  "name": "Burned Area Index for Sentinel 2",
+  "reference": "https://doi.org/10.3390/ecrs-2-05177",
+  "type": "burn"
+}

@@ -1,0 +1,12 @@
+{
+  "abbreviation": "GEMI",
+  "bands": [
+    "NIR",
+    "RED"
+  ],
+  "description": "",
+  "formula": "((2.0*((NIR ** 2.0)-(RED ** 2.0)) + 1.5*NIR + 0.5*RED)/(NIR + RED + 0.5))*(1.0 - 0.25*((2.0 * ((NIR ** 2.0) - (RED ** 2)) + 1.5 * NIR + 0.5 * RED)/(NIR + RED + 0.5)))-((RED - 0.125)/(1 - RED))",
+  "name": "Global Environment Monitoring Index",
+  "reference": "http://dx.doi.org/10.1007/bf00031911",
+  "type": "vegetation"
+}

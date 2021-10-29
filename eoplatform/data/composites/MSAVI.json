@@ -1,0 +1,12 @@
+{
+  "abbreviation": "MSAVI",
+  "bands": [
+    "NIR",
+    "RED"
+  ],
+  "description": "",
+  "formula": "0.5 * (2.0 * NIR + 1 - (((2 * NIR + 1) ** 2) - 8 * (NIR - RED)) ** 0.5)",
+  "name": "Modified Soil-Adjusted Vegetation Index",
+  "reference": "https://doi.org/10.1016/0034-4257(94)90134-1",
+  "type": "vegetation"
+}

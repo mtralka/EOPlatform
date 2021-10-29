@@ -1,0 +1,13 @@
+{
+  "abbreviation": "EBBI",
+  "bands": [
+    "SWIR",
+    "NIR",
+    "TIR1"
+  ],
+  "description": "",
+  "formula": "(SWIR - NIR) / (10.0 * ((SWIR + TIR1) ** 0.5))",
+  "name": "Enhanced Built-Up and Bareness Index",
+  "reference": "https://doi.org/10.3390/rs4102957",
+  "type": "urban"
+}

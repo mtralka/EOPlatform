@@ -1,0 +1,12 @@
+{
+  "abbreviation": "NRFIg",
+  "bands": [
+    "GREEN",
+    "SWIR2"
+  ],
+  "description": "",
+  "formula": "(GREEN - SWIR2) / (GREEN + SWIR2)",
+  "name": "Normalized Rapeseed Flowering Index Green",
+  "reference": "https://doi.org/10.3390/rs13010105",
+  "type": "vegetation"
+}

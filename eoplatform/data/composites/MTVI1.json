@@ -1,0 +1,13 @@
+{
+  "abbreviation": "MTVI1",
+  "bands": [
+    "NIR",
+    "GREEN",
+    "RED"
+  ],
+  "description": "",
+  "formula": "1.2 * (1.2 * (NIR - GREEN) - 2.5 * (RED - GREEN))",
+  "name": "Modified Triangular Vegetation Index 1",
+  "reference": "https://doi.org/10.1016/j.rse.2003.12.013",
+  "type": "vegetation"
+}

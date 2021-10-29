@@ -1,0 +1,12 @@
+{
+  "abbreviation": "NRFIr",
+  "bands": [
+    "RED",
+    "SWIR2"
+  ],
+  "description": "",
+  "formula": "(RED - SWIR2) / (RED + SWIR2)",
+  "name": "Normalized Rapeseed Flowering Index Red",
+  "reference": "https://doi.org/10.3390/rs13010105",
+  "type": "vegetation"
+}

@@ -1,0 +1,12 @@
+{
+  "abbreviation": "MGRVI",
+  "bands": [
+    "GREEN",
+    "RED"
+  ],
+  "description": "",
+  "formula": "(GREEN ** 2.0 - RED ** 2.0) / (GREEN ** 2.0 + RED ** 2.0)",
+  "name": "Modified Green Red Vegetation Index",
+  "reference": "https://doi.org/10.1016/j.jag.2015.02.012",
+  "type": "vegetation"
+}

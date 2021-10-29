@@ -1,0 +1,12 @@
+{
+  "abbreviation": "NDYI",
+  "bands": [
+    "GREEN",
+    "BLUE"
+  ],
+  "description": "",
+  "formula": "(GREEN - BLUE) / (GREEN + BLUE)",
+  "name": "Normalized Difference Yellowness Index",
+  "reference": "https://doi.org/10.1016/j.rse.2016.06.016",
+  "type": "vegetation"
+}

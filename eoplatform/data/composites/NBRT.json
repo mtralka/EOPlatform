@@ -1,0 +1,13 @@
+{
+  "abbreviation": "NBRT",
+  "bands": [
+    "NIR",
+    "SWIR2",
+    "TIR1"
+  ],
+  "description": "",
+  "formula": "(NIR - (SWIR2 * TIR1 / 10000.0)) / (NIR + (SWIR2 * TIR1 / 10000.0))",
+  "name": "Normalized Burn Ratio Thermal",
+  "reference": "https://doi.org/10.1080/01431160500239008",
+  "type": "burn"
+}

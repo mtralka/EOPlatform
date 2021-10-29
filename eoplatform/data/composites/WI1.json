@@ -1,0 +1,12 @@
+{
+  "abbreviation": "WI1",
+  "bands": [
+    "GREEN",
+    "SWIR2"
+  ],
+  "description": "",
+  "formula": "(GREEN - SWIR2) / (GREEN + SWIR2)",
+  "name": "Water Index 1",
+  "reference": "https://doi.org/10.3390/rs11182186",
+  "type": "water"
+}

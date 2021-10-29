@@ -1,0 +1,13 @@
+{
+  "abbreviation": "CSIT",
+  "bands": [
+    "NIR",
+    "SWIR2",
+    "TIR1"
+  ],
+  "description": "",
+  "formula": "NIR / (SWIR2 * TIR1 / 10000.0)",
+  "name": "Char Soil Index Thermal",
+  "reference": "https://doi.org/10.1080/01431160600954704",
+  "type": "burn"
+}

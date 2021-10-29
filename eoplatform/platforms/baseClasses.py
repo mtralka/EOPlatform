@@ -9,7 +9,7 @@ from typing import cast
 
 from eoplatform.console import console
 from eoplatform.platforms.info.visualizers import InfoVisualizers
-from eoplatform.platforms.info.visualizers import ReturnRender
+from eoplatform.sharedClasses import ReturnRender
 from rich.panel import Panel
 
 

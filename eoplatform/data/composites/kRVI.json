@@ -1,0 +1,12 @@
+{
+  "abbreviation": "kRVI",
+  "bands": [
+    "kNN",
+    "kNR"
+  ],
+  "description": "",
+  "formula": "kNN / kNR",
+  "name": "Kernel Ratio Vegetation Index",
+  "reference": "https://doi.org/10.1126/sciadv.abc7447",
+  "type": "kernel"
+}

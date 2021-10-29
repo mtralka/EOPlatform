@@ -1,0 +1,14 @@
+{
+  "abbreviation": "GARI",
+  "bands": [
+    "NIR",
+    "GREEN",
+    "BLUE",
+    "RED"
+  ],
+  "description": "",
+  "formula": "(NIR - (GREEN - (BLUE - RED))) / (NIR - (GREEN + (BLUE - RED)))",
+  "name": "Green Atmospherically Resistant Vegetation Index",
+  "reference": "https://www.indexdatabase.de/db/i-single.php?id=363",
+  "type": "vegetation"
+}

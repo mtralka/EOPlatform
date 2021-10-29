@@ -1,0 +1,12 @@
+{
+  "abbreviation": "NDREI",
+  "bands": [
+    "NIR",
+    "VRE1"
+  ],
+  "description": "",
+  "formula": "(NIR - VRE1) / (NIR + VRE1)",
+  "name": "Normalized Difference Red Edge Index",
+  "reference": "https://doi.org/10.1016/1011-1344(93)06963-4",
+  "type": "vegetation"
+}

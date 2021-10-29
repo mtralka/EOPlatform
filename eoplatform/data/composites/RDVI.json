@@ -1,0 +1,12 @@
+{
+  "abbreviation": "RDVI",
+  "bands": [
+    "NIR",
+    "RED"
+  ],
+  "description": "",
+  "formula": "(NIR - RED) / ((NIR + RED) ** 0.5)",
+  "name": "Renormalized Difference Vegetation Index",
+  "reference": "https://doi.org/10.1016/0034-4257(94)00114-3",
+  "type": "vegetation"
+}

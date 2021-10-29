@@ -1,0 +1,12 @@
+{
+  "abbreviation": "BNDVI",
+  "bands": [
+    "NIR",
+    "BLUE"
+  ],
+  "description": "",
+  "formula": "(NIR - BLUE)/(NIR + BLUE)",
+  "name": "Blue Normalized Difference Vegetation Index",
+  "reference": "https://www.indexdatabase.de/db/i-single.php?id=135",
+  "type": "vegetation"
+}

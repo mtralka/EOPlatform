@@ -1,0 +1,12 @@
+{
+  "abbreviation": "OSAVI",
+  "bands": [
+    "NIR",
+    "RED"
+  ],
+  "description": "",
+  "formula": "(NIR - RED) / (NIR + RED + 0.16)",
+  "name": "Optimized Soil-Adjusted Vegetation Index",
+  "reference": "https://doi.org/10.1016/0034-4257(95)00186-7",
+  "type": "vegetation"
+}

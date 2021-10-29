@@ -1,0 +1,12 @@
+{
+  "abbreviation": "DVI",
+  "bands": [
+    "NIR",
+    "RED"
+  ],
+  "description": "",
+  "formula": "NIR - RED",
+  "name": "Difference Vegetation Index",
+  "reference": "https://doi.org/10.2307/1936256",
+  "type": "vegetation"
+}

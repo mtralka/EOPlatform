@@ -1,0 +1,12 @@
+{
+  "abbreviation": "CIRE",
+  "bands": [
+    "NIR",
+    "VRE1"
+  ],
+  "description": "",
+  "formula": "(NIR / VRE1) - 1",
+  "name": "Chlorophyll Index Red Edge",
+  "reference": "https://doi.org/10.1078/0176-1617-00887",
+  "type": "vegetation"
+}

@@ -1,0 +1,12 @@
+{
+  "abbreviation": "NDBI",
+  "bands": [
+    "SWIR",
+    "NIR"
+  ],
+  "description": "",
+  "formula": "(SWIR - NIR) / (SWIR + NIR)",
+  "name": "Normalized Difference Built-Up Index",
+  "reference": "http://dx.doi.org/10.1080/01431160304987",
+  "type": "urban"
+}

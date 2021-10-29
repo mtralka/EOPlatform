@@ -1,0 +1,13 @@
+{
+  "abbreviation": "CVI",
+  "bands": [
+    "NIR",
+    "RED",
+    "GREEN"
+  ],
+  "description": "",
+  "formula": "(NIR * RED) / (GREEN ** 2.0)",
+  "name": "Chlorophyll Vegetation Index",
+  "reference": "https://www.cabdirect.org/cabdirect/abstract/20073176046",
+  "type": "vegetation"
+}

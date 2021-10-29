@@ -1,0 +1,12 @@
+{
+  "abbreviation": "NDSII",
+  "bands": [
+    "RED",
+    "SWIR"
+  ],
+  "description": "",
+  "formula": "(RED - SWIR) / (RED + SWIR)",
+  "name": "Normalized Difference Snow Ice Index",
+  "reference": "https://doi.org/10.1080/01431160119766",
+  "type": "snow"
+}

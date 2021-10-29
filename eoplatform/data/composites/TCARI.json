@@ -1,0 +1,13 @@
+{
+  "abbreviation": "TCARI",
+  "bands": [
+    "VRE1",
+    "RED",
+    "GREEN"
+  ],
+  "description": "",
+  "formula": "3 * ((VRE1 - RED) - 0.2 * (VRE1 - GREEN) * (VRE1 / RED))",
+  "name": "Transformed Chlorophyll Absorption in Reflectance Index",
+  "reference": "https://doi.org/10.1016/S0034-4257(02)00018-4",
+  "type": "vegetation"
+}

@@ -1,0 +1,13 @@
+{
+  "abbreviation": "SAVI",
+  "bands": [
+    "L",
+    "NIR",
+    "RED"
+  ],
+  "description": "",
+  "formula": "(1.0 + L) * (NIR - RED) / (NIR + RED + L)",
+  "name": "Soil-Adjusted Vegetation Index",
+  "reference": "https://doi.org/10.1016/0034-4257(88)90106-X",
+  "type": "vegetation"
+}

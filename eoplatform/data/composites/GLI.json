@@ -1,0 +1,13 @@
+{
+  "abbreviation": "GLI",
+  "bands": [
+    "GREEN",
+    "RED",
+    "BLUE"
+  ],
+  "description": "",
+  "formula": "(2.0 * GREEN - RED - BLUE) / (2.0 * GREEN + RED + BLUE)",
+  "name": "Green Leaf Index",
+  "reference": "http://dx.doi.org/10.1080/10106040108542184",
+  "type": "vegetation"
+}

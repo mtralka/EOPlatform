@@ -1,0 +1,12 @@
+{
+  "abbreviation": "NLI",
+  "bands": [
+    "NIR",
+    "RED"
+  ],
+  "description": "",
+  "formula": "((NIR ** 2) - RED)/((NIR ** 2) + RED)",
+  "name": "Non-Linear Vegetation Index",
+  "reference": "https://doi.org/10.1080/02757259409532252",
+  "type": "vegetation"
+}

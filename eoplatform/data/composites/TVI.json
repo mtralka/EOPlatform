@@ -1,0 +1,13 @@
+{
+  "abbreviation": "TVI",
+  "bands": [
+    "NIR",
+    "GREEN",
+    "RED"
+  ],
+  "description": "",
+  "formula": "0.5 * (120 * (NIR - GREEN) - 200 * (RED - GREEN))",
+  "name": "Triangular Vegetation Index",
+  "reference": "http://dx.doi.org/10.1016/S0034-4257(00)00197-8",
+  "type": "vegetation"
+}

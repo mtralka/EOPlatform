@@ -1,0 +1,12 @@
+{
+  "abbreviation": "NDBaI",
+  "bands": [
+    "SWIR",
+    "TIR1"
+  ],
+  "description": "",
+  "formula": "(SWIR - TIR1) / (SWIR + TIR1)",
+  "name": "Normalized Difference Bareness Index",
+  "reference": "https://doi.org/10.1109/IGARSS.2005.1526319",
+  "type": "urban"
+}
