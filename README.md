@@ -37,13 +37,17 @@ Coming soon:
 
 ### Installation
 
-`eoplatform` can be installed by running `pip install eoplatform`. It requires Python 3.7 or above to run. 
+*eoplatform* can be installed by running `pip install eoplatform`. It requires Python 3.7 or above to run.
 
-### Example
+#### *eoplatform* development is ongoing -
 
+upgrade to the latest version by running:
+`pip install eoplatform -U`
 
+Install the latest dev version with:
+`pip install git+https://github.com/mtralka/EOPlatform/eoplatform`
 
-## Usage
+### Usage
 
 *eoplatform* is accessible through the command line (CLI) and as a module import.
 
