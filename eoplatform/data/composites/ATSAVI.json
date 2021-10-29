@@ -1,0 +1,14 @@
+{
+  "abbreviation": "ATSAVI",
+  "bands": [
+    "sla",
+    "NIR",
+    "RED",
+    "slb"
+  ],
+  "description": "",
+  "formula": "sla * (NIR - sla * RED - slb) / (sla * NIR + RED - sla * slb + 0.08 * (1 + sla ** 2.0))",
+  "name": "Adjusted Transformed Soil-Adjusted Vegetation Index",
+  "reference": "https://doi.org/10.1016/0034-4257(91)90009-U",
+  "type": "vegetation"
+}

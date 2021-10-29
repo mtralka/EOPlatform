@@ -1,0 +1,12 @@
+{
+  "abbreviation": "VIG",
+  "bands": [
+    "GREEN",
+    "RED"
+  ],
+  "description": "",
+  "formula": "(GREEN - RED) / (GREEN + RED)",
+  "name": "Vegetation Index Green",
+  "reference": "https://doi.org/10.1016/S0034-4257(01)00289-9",
+  "type": "vegetation"
+}

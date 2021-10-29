@@ -1,0 +1,12 @@
+{
+  "abbreviation": "NBR2",
+  "bands": [
+    "SWIR",
+    "SWIR2"
+  ],
+  "description": "",
+  "formula": "(SWIR - SWIR2) / (SWIR + SWIR2)",
+  "name": "Normalized Burn Ratio 2",
+  "reference": "https://www.usgs.gov/core-science-systems/nli/landsat/landsat-normalized-burn-ratio-2",
+  "type": "burn"
+}

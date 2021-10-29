@@ -1,0 +1,12 @@
+{
+  "abbreviation": "BAI",
+  "bands": [
+    "RED",
+    "NIR"
+  ],
+  "description": "",
+  "formula": "1.0 / ((0.1 - RED) ** 2.0 + (0.06 - NIR) ** 2.0)",
+  "name": "Burned Area Index",
+  "reference": "https://digital.csic.es/bitstream/10261/6426/1/Martin_Isabel_Serie_Geografica.pdf",
+  "type": "burn"
+}

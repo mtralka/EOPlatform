@@ -1,0 +1,17 @@
+{
+  "abbreviation": "EVI",
+  "bands": [
+    "g",
+    "NIR",
+    "RED",
+    "C1",
+    "C2",
+    "BLUE",
+    "L"
+  ],
+  "description": "",
+  "formula": "g * (NIR - RED) / (NIR + C1 * RED - C2 * BLUE + L)",
+  "name": "Enhanced Vegetation Index",
+  "reference": "https://doi.org/10.1016/S0034-4257(96)00112-5",
+  "type": "vegetation"
+}

@@ -1,0 +1,13 @@
+{
+  "abbreviation": "BWDRVI",
+  "bands": [
+    "alpha",
+    "NIR",
+    "BLUE"
+  ],
+  "description": "",
+  "formula": "(alpha * NIR - BLUE) / (alpha * NIR + BLUE)",
+  "name": "Blue Wide Dynamic Range Vegetation Index",
+  "reference": "https://doi.org/10.2135/cropsci2007.01.0031",
+  "type": "vegetation"
+}

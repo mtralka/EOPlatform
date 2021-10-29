@@ -1,0 +1,13 @@
+{
+  "abbreviation": "S3",
+  "bands": [
+    "NIR",
+    "RED",
+    "SWIR"
+  ],
+  "description": "",
+  "formula": "(NIR * (RED - SWIR)) / ((NIR + RED) * (NIR + SWIR))",
+  "name": "S3 Snow Index",
+  "reference": "https://doi.org/10.3178/jjshwr.12.28",
+  "type": "snow"
+}

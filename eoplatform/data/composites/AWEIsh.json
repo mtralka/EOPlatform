@@ -1,0 +1,15 @@
+{
+  "abbreviation": "AWEIsh",
+  "bands": [
+    "BLUE",
+    "GREEN",
+    "NIR",
+    "SWIR",
+    "SWIR2"
+  ],
+  "description": "",
+  "formula": "BLUE + 2.5 * GREEN - 1.5 * (NIR + SWIR) - 0.25 * SWIR2",
+  "name": "Automated Water Extraction Index with Shadows Elimination",
+  "reference": "https://doi.org/10.1016/j.rse.2013.08.029",
+  "type": "water"
+}

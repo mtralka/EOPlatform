@@ -1,0 +1,12 @@
+{
+  "abbreviation": "MSR",
+  "bands": [
+    "NIR",
+    "RED"
+  ],
+  "description": "",
+  "formula": "(NIR / RED - 1) / ((NIR / RED + 1) ** 0.5)",
+  "name": "Modified Simple Ratio",
+  "reference": "https://doi.org/10.1080/07038992.1996.10855178",
+  "type": "vegetation"
+}

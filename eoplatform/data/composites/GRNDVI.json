@@ -1,0 +1,13 @@
+{
+  "abbreviation": "GRNDVI",
+  "bands": [
+    "NIR",
+    "GREEN",
+    "RED"
+  ],
+  "description": "",
+  "formula": "(NIR - (GREEN + RED))/(NIR + (GREEN + RED))",
+  "name": "Green-Red Normalized Difference Vegetation Index",
+  "reference": "https://www.indexdatabase.de/db/i-single.php?id=185",
+  "type": "vegetation"
+}

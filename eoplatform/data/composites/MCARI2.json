@@ -1,0 +1,13 @@
+{
+  "abbreviation": "MCARI2",
+  "bands": [
+    "NIR",
+    "RED",
+    "GREEN"
+  ],
+  "description": "",
+  "formula": "(1.5 * (2.5 * (NIR - RED) - 1.3 * (NIR - GREEN))) / ((((2.0 * NIR + 1) ** 2) - (6.0 * NIR - 5 * (RED ** 0.5)) - 0.5) ** 0.5)",
+  "name": "Modified Chlorophyll Absorption in Reflectance Index 2",
+  "reference": "https://doi.org/10.1016/j.rse.2003.12.013",
+  "type": "vegetation"
+}

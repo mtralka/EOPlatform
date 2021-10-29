@@ -1,0 +1,13 @@
+{
+  "abbreviation": "SWI",
+  "bands": [
+    "GREEN",
+    "NIR",
+    "SWIR"
+  ],
+  "description": "",
+  "formula": "(GREEN * (NIR - SWIR)) / ((GREEN + NIR) * (NIR + SWIR))",
+  "name": "Snow Water Index",
+  "reference": "https://doi.org/10.3390/rs11232774",
+  "type": "snow"
+}

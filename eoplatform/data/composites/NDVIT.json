@@ -1,0 +1,13 @@
+{
+  "abbreviation": "NDVIT",
+  "bands": [
+    "NIR",
+    "RED",
+    "TIR1"
+  ],
+  "description": "",
+  "formula": "(NIR - (RED * TIR1 / 10000.0))/(NIR + (RED * TIR1 / 10000.0))",
+  "name": "Normalized Difference Vegetation Index Thermal",
+  "reference": "https://doi.org/10.1080/01431160600954704",
+  "type": "burn"
+}

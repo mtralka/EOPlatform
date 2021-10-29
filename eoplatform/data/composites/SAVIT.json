@@ -1,0 +1,14 @@
+{
+  "abbreviation": "SAVIT",
+  "bands": [
+    "L",
+    "NIR",
+    "RED",
+    "TIR1"
+  ],
+  "description": "",
+  "formula": "(1.0 + L) * (NIR - (RED * TIR1 / 10000.0)) / (NIR + (RED * TIR1 / 10000.0) + L)",
+  "name": "Soil-Adjusted Vegetation Index Thermal",
+  "reference": "https://doi.org/10.1080/01431160600954704",
+  "type": "burn"
+}

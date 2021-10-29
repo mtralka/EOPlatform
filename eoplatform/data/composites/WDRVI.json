@@ -1,0 +1,13 @@
+{
+  "abbreviation": "WDRVI",
+  "bands": [
+    "alpha",
+    "NIR",
+    "RED"
+  ],
+  "description": "",
+  "formula": "(alpha * NIR - RED) / (alpha * NIR + RED)",
+  "name": "Wide Dynamic Range Vegetation Index",
+  "reference": "https://doi.org/10.1078/0176-1617-01176",
+  "type": "vegetation"
+}

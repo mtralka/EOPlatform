@@ -1,0 +1,12 @@
+{
+  "abbreviation": "MNDVI",
+  "bands": [
+    "NIR",
+    "SWIR2"
+  ],
+  "description": "",
+  "formula": "(NIR - SWIR2)/(NIR + SWIR2)",
+  "name": "Modified Normalized Difference Vegetation Index",
+  "reference": "https://doi.org/10.1080/014311697216810",
+  "type": "vegetation"
+}

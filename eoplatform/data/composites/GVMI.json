@@ -1,0 +1,12 @@
+{
+  "abbreviation": "GVMI",
+  "bands": [
+    "NIR",
+    "SWIR2"
+  ],
+  "description": "",
+  "formula": "((NIR + 0.1) - (SWIR2 + 0.02)) / ((NIR + 0.1) + (SWIR2 + 0.02))",
+  "name": "Global Vegetation Moisture Index",
+  "reference": "https://doi.org/10.1016/S0034-4257(02)00037-8",
+  "type": "vegetation"
+}

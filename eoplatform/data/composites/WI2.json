@@ -1,0 +1,12 @@
+{
+  "abbreviation": "WI2",
+  "bands": [
+    "BLUE",
+    "SWIR2"
+  ],
+  "description": "",
+  "formula": "(BLUE - SWIR2) / (BLUE + SWIR2)",
+  "name": "Water Index 2",
+  "reference": "https://doi.org/10.3390/rs11182186",
+  "type": "water"
+}

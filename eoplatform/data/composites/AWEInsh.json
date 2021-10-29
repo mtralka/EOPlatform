@@ -1,0 +1,14 @@
+{
+  "abbreviation": "AWEInsh",
+  "bands": [
+    "GREEN",
+    "SWIR",
+    "NIR",
+    "SWIR2"
+  ],
+  "description": "",
+  "formula": "4.0 * (GREEN - SWIR) - 0.25 * NIR + 2.75 * SWIR2",
+  "name": "Automated Water Extraction Index",
+  "reference": "https://doi.org/10.1016/j.rse.2013.08.029",
+  "type": "water"
+}

@@ -1,0 +1,14 @@
+{
+  "abbreviation": "EVI2",
+  "bands": [
+    "g",
+    "NIR",
+    "RED",
+    "L"
+  ],
+  "description": "",
+  "formula": "g * (NIR - RED) / (NIR + 2.4 * RED + L)",
+  "name": "Two-Band Enhanced Vegetation Index",
+  "reference": "https://doi.org/10.1016/j.rse.2008.06.006",
+  "type": "vegetation"
+}

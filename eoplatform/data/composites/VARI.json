@@ -1,0 +1,13 @@
+{
+  "abbreviation": "VARI",
+  "bands": [
+    "GREEN",
+    "RED",
+    "BLUE"
+  ],
+  "description": "",
+  "formula": "(GREEN - RED) / (GREEN + RED - BLUE)",
+  "name": "Visible Atmospherically Resistant Index",
+  "reference": "https://doi.org/10.1016/S0034-4257(01)00289-9",
+  "type": "vegetation"
+}

@@ -1,0 +1,17 @@
+{
+  "abbreviation": "kEVI",
+  "bands": [
+    "g",
+    "kNN",
+    "kNR",
+    "C1",
+    "C2",
+    "kNB",
+    "kNL"
+  ],
+  "description": "",
+  "formula": "g * (kNN - kNR) / (kNN + C1 * kNR - C2 * kNB + kNL)",
+  "name": "Kernel Enhanced Vegetation Index",
+  "reference": "https://doi.org/10.1126/sciadv.abc7447",
+  "type": "kernel"
+}

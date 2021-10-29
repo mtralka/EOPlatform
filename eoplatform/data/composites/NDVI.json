@@ -1,0 +1,12 @@
+{
+  "abbreviation": "NDVI",
+  "bands": [
+    "NIR",
+    "RED"
+  ],
+  "description": "",
+  "formula": "(NIR - RED)/(NIR + RED)",
+  "name": "Normalized Difference Vegetation Index",
+  "reference": "https://doi.org/10.1016/0034-4257(79)90013-0",
+  "type": "vegetation"
+}

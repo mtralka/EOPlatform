@@ -1,0 +1,13 @@
+{
+  "abbreviation": "WDVI",
+  "bands": [
+    "NIR",
+    "sla",
+    "RED"
+  ],
+  "description": "",
+  "formula": "NIR - sla * RED",
+  "name": "Weighted Difference Vegetation Index",
+  "reference": "https://doi.org/10.1016/0034-4257(89)90076-X",
+  "type": "vegetation"
+}

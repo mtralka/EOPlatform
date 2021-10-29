@@ -1,0 +1,12 @@
+{
+  "abbreviation": "MNDWI",
+  "bands": [
+    "GREEN",
+    "SWIR"
+  ],
+  "description": "",
+  "formula": "(GREEN - SWIR) / (GREEN + SWIR)",
+  "name": "Modified Normalized Difference Water Index",
+  "reference": "https://doi.org/10.1080/01431160600589179",
+  "type": "water"
+}

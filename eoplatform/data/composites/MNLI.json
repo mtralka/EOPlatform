@@ -1,0 +1,13 @@
+{
+  "abbreviation": "MNLI",
+  "bands": [
+    "L",
+    "NIR",
+    "RED"
+  ],
+  "description": "",
+  "formula": "(1 + L)*((NIR ** 2) - RED)/((NIR ** 2) + RED + L)",
+  "name": "Modified Non-Linear Vegetation Index",
+  "reference": "https://doi.org/10.1109/TGRS.2003.812910",
+  "type": "vegetation"
+}

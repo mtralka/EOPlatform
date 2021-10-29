@@ -1,0 +1,13 @@
+{
+  "abbreviation": "TGI",
+  "bands": [
+    "RED",
+    "GREEN",
+    "BLUE"
+  ],
+  "description": "",
+  "formula": "- 0.5 * (190 * (RED - GREEN) - 120 * (RED - BLUE))",
+  "name": "Triangular Greenness Index",
+  "reference": "http://dx.doi.org/10.1016/j.jag.2012.07.020",
+  "type": "vegetation"
+}

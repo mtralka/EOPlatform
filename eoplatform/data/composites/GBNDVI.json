@@ -1,0 +1,13 @@
+{
+  "abbreviation": "GBNDVI",
+  "bands": [
+    "NIR",
+    "GREEN",
+    "BLUE"
+  ],
+  "description": "",
+  "formula": "(NIR - (GREEN + BLUE))/(NIR + (GREEN + BLUE))",
+  "name": "Green-Blue Normalized Difference Vegetation Index",
+  "reference": "https://www.indexdatabase.de/db/i-single.php?id=186",
+  "type": "vegetation"
+}

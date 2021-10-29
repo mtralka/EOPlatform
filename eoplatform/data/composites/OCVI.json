@@ -1,0 +1,14 @@
+{
+  "abbreviation": "OCVI",
+  "bands": [
+    "NIR",
+    "GREEN",
+    "RED",
+    "cexp"
+  ],
+  "description": "",
+  "formula": "(NIR / GREEN) * (RED / GREEN) ** cexp",
+  "name": "Optimized Chlorophyll Vegetation Index",
+  "reference": "http://dx.doi.org/10.1007/s11119-008-9075-z",
+  "type": "vegetation"
+}

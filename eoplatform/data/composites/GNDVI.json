@@ -1,0 +1,12 @@
+{
+  "abbreviation": "GNDVI",
+  "bands": [
+    "NIR",
+    "GREEN"
+  ],
+  "description": "",
+  "formula": "(NIR - GREEN)/(NIR + GREEN)",
+  "name": "Green Normalized Difference Vegetation Index",
+  "reference": "https://doi.org/10.1016/S0034-4257(96)00072-7",
+  "type": "vegetation"
+}

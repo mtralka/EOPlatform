@@ -1,0 +1,12 @@
+{
+  "abbreviation": "CIG",
+  "bands": [
+    "NIR",
+    "GREEN"
+  ],
+  "description": "",
+  "formula": "(NIR / GREEN) - 1.0",
+  "name": "Chlorophyll Index Green",
+  "reference": "https://doi.org/10.1078/0176-1617-00887",
+  "type": "vegetation"
+}

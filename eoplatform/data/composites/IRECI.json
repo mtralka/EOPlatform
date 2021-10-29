@@ -1,0 +1,14 @@
+{
+  "abbreviation": "IRECI",
+  "bands": [
+    "VRE3",
+    "RED",
+    "VRE1",
+    "VRE2"
+  ],
+  "description": "",
+  "formula": "(VRE3 - RED) / (VRE1 / VRE2)",
+  "name": "Inverted Red-Edge Chlorophyll Index",
+  "reference": "https://doi.org/10.1016/j.isprsjprs.2013.04.007",
+  "type": "vegetation"
+}
