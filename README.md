@@ -22,15 +22,10 @@
 
 *eoplatform* is a Python package that aims to simplify Remote Sensing Earth Observation by providing actionable information on a wide swath of RS platforms and provide a simple API for downloading and visualizing RS imagery. Made for scientists, educators, and hobbiests alike.
 
-* Easy to access **information** on RS platforms
-  * Band information
-  * Orbit regimes
-  * Scene statistics
-  * etc
+* Easy access to information on RS platforms
 * `metadata` module for extracting platform metadata
   * supports `.txt` and `.xml` files
-* `composites` modules for creating and learning about popular RS band composites
-  * Included so far - NDVI, SR, DVI, EVI, EVI2, NDWI, NBR, NDSI, NDBI
+* `composites` modules for creating and learning about 91 RS band composites
 
 Coming soon:
 
@@ -46,109 +41,80 @@ Coming soon:
 
 ### Example
 
-<img src="images/eoplatform-info-landsat8.PNG" alt="Landsat8 Info" width="600">
+
 
 ## Usage
 
 *eoplatform* is accessible through the command line (CLI) and as a module import.
 
-### Querying platform info
+### Querying information
 
-#### CLI
+#### ...through CLI
 
-`PLATFORM` argument is case-insensitive
+`NAME` is any supported composite or platform (case-insensitive)
 
 ```sh
-Usage: eoplatform info [OPTIONS] PLATFORM
+Usage: eoplatform info [OPTIONS] NAME
 
 Arguments:
-  PLATFORM  [required]
+  NAME  [required]
 
 Options:
-  -d, --description / -nd, --no-description
-                                  [default: description]     
-  --help                          Show this message and exit.
+  -b, --only-bands
+   / -nd, --no-description  [default: True]
+  --help                    Show this message and exit.
 ```
 
 EX:
+
+**Show all information on `landsat8`**
 
 ```sh
 eoplatform info landsat8
 ```
 
-show all info *eoplatform* has on `Landsat8`
+![EOPlatform Landsat8 info example](images/eoplatform-info-landsat8.PNG)
+
+**Show only `landsat8` bands**
 
 ```sh
 eoplatform info landsat8 -b
 ```
 
-shows only `Landsat8`'s bands
+**Show information on composite `NDVI`**
 
-#### Module import
-
-You can import your desired platform
-
-```python
-from eoplatform import landsat8
-
-landsat8.info()  # OR print(landsat8)
+```sh
+eoplatform info ndvi
 ```
 
-or search from the *eoplatform* module itself
+![EOPlatform NDVI info example](images/eoplatform-composite-info-ndvi.PNG)
+
+#### ...through imports
+
+You can search through the `eoplatform` module
 
 ```python
 import eoplatform as eop
 
 eop.info("Landsat8")  # case insensitive
+eop.info("NDVI)
 ```
 
-### Downloading platform scenes
-
-#### CLI
-
-in-progress
-
-```sh
-Usage: eoplatform download [OPTIONS] PLATFORM
-
-Arguments:
-  PLATFORM  [required]
-
-Options:
-  --help  Show this message and exit.
-```
-
-#### Module import
-
- in-progress
-
- ```python
-from eoplatform import landsat8
-
-landsat8.download()
-```
+Or import your exact platform/composite
 
 ```python
-import eoplatform as eop
+from eoplatform.platforms import landsat8
+from eoplatform.composites import NDVI
 
-eop.download("landsat8")
+landsat8.info()  # OR print(landsat8)
+NDVI.info()  # or print(NDVI)
 ```
-
-both methods accept the full range of search keword arguments
 
 ### Band composites
 
-Implemented composites:
+Importable through `eoplatforms.composites` or searchable (shown above) from `eoplatforms.info()`
 
-* Normalized Difference Vegetation Index (NDVI)
-* Simple Ratio (SR)
-* Difference Vegetation Index (DVI)
-* Enhanced Vegetation Index (EVI)
-* Enhanced Vegetation Index 2 (EVI2)
-* Normalized Difference Water Index (NDWI)
-* Normalized Burn Ratio (NBR)
-* Normalized Difference Snow Index (NDSI)
-* Normalized DIfference Built-Up Index (NDBI)
+See [implemented composite data dir](/eoplatform/data/composites) for the exact implemented composites (inspired by [awesome spectral indices](https://github.com/davemlz/awesome-spectral-indices))
 
 #### Composite information
 
@@ -160,13 +126,15 @@ NDVI.info()
 
 #### Creating composite
 
+Composites bands must be passed in as keyword arguments assigned to NumPy arrays.
+
 ```python
 from eoplatform.composites import NDVI
 
 red_array: np.ndarray = ...
 nir_array: np.ndarray = ...
 
-ndvi: np.ndarray = NDVI.create(nir_array, red_array)
+ndvi: np.ndarray = NDVI.create(NIR=nir_array, RED=red_array)
 ```
 
 ### Metadata extraction
@@ -205,6 +173,8 @@ Distributed under the GNU GPL-3.0 License. See [LICENSE](https://github.com/mtra
 
 * [Rich](https://github.com/willmcgugan/rich)
 * [Typer](https://github.com/tiangolo/typer)
+* [Numpy](https://numpy.org/)
+* [awesome spectral indices](https://github.com/davemlz/awesome-spectral-indices)
 
 ## Authors
 
