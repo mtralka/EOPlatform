@@ -112,7 +112,7 @@ NDVI.info()  # or print(NDVI)
 
 ### Band composites
 
-Importable through `eoplatforms.composites` or searchable (shown above) from `eoplatforms.info()`
+Importable through `eoplatforms.composites` or searchable (shown above) from `eoplatform.info()`
 
 See [implemented composite data dir](/eoplatform/data/composites) for the exact implemented composites (inspired by [awesome spectral indices](https://github.com/davemlz/awesome-spectral-indices))
 
