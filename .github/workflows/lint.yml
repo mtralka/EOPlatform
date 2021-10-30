@@ -27,6 +27,6 @@ jobs:
     - name: Install dependencies
       run: poetry install
     - name: Run mypy
-      run: mypy eoplatform --strict
+      run: poetry run mypy eoplatform --strict
     - name: Run black
-      run: black eoplatform
+      run: poetry run black eoplatform
