@@ -1,7 +1,7 @@
 from typing import Optional
 from typing import cast
 
-from eoplatform.composites.baseClasses import Composite
+from eoplatform.composites.classes import Composite
 from eoplatform.composites.factory import EOCompositeFactory
 from eoplatform.console import console
 
