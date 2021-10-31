@@ -12,8 +12,8 @@ from typing import Tuple
 from typing import Union
 from typing import cast
 
-from eoplatform.composites.baseClasses import Composite
-from eoplatform.composites.baseClasses import CompositeType
+from eoplatform.composites.classes import Composite
+from eoplatform.composites.classes import CompositeType
 from eoplatform.utils import COMPOSITES_DIR
 
 
