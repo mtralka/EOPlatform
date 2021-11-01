@@ -1,13 +1,6 @@
-import sys
-
-
-if sys.version_info >= (3, 8, 0):
-    from typing import Final  # type: ignore
-else:
-    from typing_extensions import Final
-
 from os import path
 from typing import Dict
+from typing import Final
 from typing import List
 from typing import Optional
 from typing import cast

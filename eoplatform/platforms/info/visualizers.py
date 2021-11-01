@@ -1,19 +1,13 @@
 from dataclasses import fields
-import sys
 from typing import Any
 from typing import Dict
+from typing import Final
 from typing import List
 
-from eoplatform.sharedClasses import ReturnRender
+from eoplatform.shared_classes import ReturnRender
 from rich.console import Group
 from rich.table import Table
 from rich.text import Text
-
-
-if sys.version_info >= (3, 8, 0):
-    from typing import Final  # type: ignore
-else:
-    from typing_extensions import Final
 
 
 class InfoVisualizers:

@@ -1,7 +1,9 @@
 from dataclasses import dataclass
 from dataclasses import field
-import sys
 from typing import Any
+from typing import Callable
+from typing import Dict
+from typing import Final
 from typing import Iterator
 from typing import Optional
 from typing import Sized
@@ -9,14 +11,8 @@ from typing import cast
 
 from eoplatform.console import console
 from eoplatform.platforms.info.visualizers import InfoVisualizers
-from eoplatform.sharedClasses import ReturnRender
+from eoplatform.shared_classes import ReturnRender
 from rich.panel import Panel
-
-
-if sys.version_info >= (3, 8, 0):
-    from typing import Final  # type: ignore
-else:
-    from typing_extensions import Final
 
 
 class Base:
@@ -26,7 +22,7 @@ class Base:
 
     def info(self, show_description: bool = True, title: bool = False) -> None:
 
-        VISUALIZERS: Final[dict] = {
+        VISUALIZERS: Final[Dict[type, Callable[..., ReturnRender]]] = {
             Band: InfoVisualizers.get_band_viz,
             Bands: InfoVisualizers.get_bands_viz,
             Platform: InfoVisualizers.get_platform_viz,
