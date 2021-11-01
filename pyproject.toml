@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "eoplatform"
-version = "0.2.2"
+version = "0.2.3"
 description = "Earth Observation made easy."
 authors = ["Matthew Tralka <matthew@tralka.xyz>"]
 maintainers = ["Matthew Tralka <matthew@tralka.xyz>"]
