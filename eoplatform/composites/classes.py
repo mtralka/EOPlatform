@@ -9,7 +9,7 @@ from typing import cast
 from eoplatform.composites.safe_eval import safe_eval  # type: ignore[attr-defined]
 from eoplatform.composites.visualizers import CompositeVisualizers
 from eoplatform.console import console
-from eoplatform.sharedClasses import ReturnRender
+from eoplatform.shared_classes import ReturnRender
 from rich.panel import Panel
 
 
