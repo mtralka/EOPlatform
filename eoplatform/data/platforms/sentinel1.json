@@ -1,0 +1,73 @@
+{
+  "abbreviation": "S1",
+  "altitude": {
+    "meta": {
+      "unit": "km"
+    },
+    "value": 693
+  },
+  "bands": [
+    {
+      "abbreviation": "SM",
+      "description": "The sole uses of SM are to monitor small islands as well as emergency management for extraordinary events upon request",
+      "name": "Strip Map",
+      "number": 0,
+      "resolution": "(5,5",
+      "sensor": "CSAR",
+      "wavelength": "55465"
+    },
+    {
+      "abbreviation": "IW",
+      "description": "IW is the main operational mode over land",
+      "name": "Interferometric Wide Swath",
+      "number": 0,
+      "resolution": "(5,20)",
+      "sensor": "CSAR",
+      "wavelength": "55465"
+    },
+    {
+      "abbreviation": "EW",
+      "description": "EW is used mainly to monitor wide coastal areas for phenomena such as shipping traffic and potential environmental hazards like oil spills or changes in sea ice.",
+      "name": "Extra Wide Swath",
+      "number": 0,
+      "resolution": "(20,40)",
+      "sensor": "CSAR",
+      "wavelength": "55465"
+    },
+    {
+      "abbreviation": "WV",
+      "description": "This is the main operational mode over open ocean.",
+      "name": "Wave Mode",
+      "number": 0,
+      "resolution": "(5,20)",
+      "sensor": "CSAR",
+      "wavelength": "55465"
+    }
+  ],
+  "constellation": "2",
+  "data_source": "https://sentinel.esa.int/web/sentinel/missions/sentinel-2",
+  "description": "The Sentinel-1 mission comprises a constellation of two polar-orbiting satellites, operating day and night performing C-band synthetic aperture radar imaging, enabling them to acquire imagery regardless of the weather.",
+  "inclination": {
+    "meta": {
+      "unit": "degrees"
+    },
+    "value": "98.18"
+  },
+  "launch_date": "04/03/2014 | 04/25/2016",
+  "name": "Sentinel 1",
+  "operator": "ESA",
+  "orbit_time": {
+    "meta": {
+      "unit": "minutes"
+    },
+    "value": 98.6
+  },
+  "regime": "Sun-synchronous orbit",
+  "revisit_time": {
+    "meta": {
+      "unit": "days"
+    },
+    "value": "6 (12 each satellite)"
+  },
+  "type": "C-Band Radar"
+}
