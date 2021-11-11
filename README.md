@@ -111,6 +111,8 @@ from eoplatform.platforms import landsat8
 from eoplatform.composites import NDVI
 
 landsat8.info()  # OR print(landsat8)
+landsat8.bands.info()
+landsat8.bands.RED.info()
 NDVI.info()  # or print(NDVI)
 ```
 

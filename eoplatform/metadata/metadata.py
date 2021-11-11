@@ -1,8 +1,11 @@
 from os import path
+from pathlib import Path
+from typing import Any
 from typing import Dict
 from typing import Final
 from typing import List
 from typing import Optional
+from typing import Union
 from typing import cast
 import xml.etree.ElementTree as ET
 
@@ -16,6 +19,43 @@ def _not_found_message(*args: str) -> None:
     )
 
     return None
+
+
+def extract_metadata(
+    file_path: Union[Path, str], target_attributes: List[str], **kwargs: Any
+) -> Union[Dict[str, Optional[str]], Dict[str, str]]:
+    """Extract metadata from file
+
+    Detects filetype and implements the required metadata extractor. Currently supports
+    XML and TXT files. Passes additional kwargs to requisite function
+
+    Parameters
+    ----------
+    file_path : str
+        Full file path to target XML file
+    target_attributes: List[str]
+        List of target attributes desired
+
+    Returns
+    -------
+    Dict[str, Optional[str]]
+
+    """
+
+    file: Path = Path(file_path) if isinstance(file_path, str) else file_path
+    file_extension: Optional[str] = file.suffix
+
+    if not file_extension:
+        raise ValueError("Input path does not seem to have a file extension")
+
+    file_extension = file_extension.lower()
+
+    if file_extension == ".xml":
+        return extract_XML_metadata(str(file), target_attributes)
+    elif file_extension == ".txt":
+        return extract_TXT_metadata(str(file), target_attributes, **kwargs)
+    else:
+        raise ValueError(f"{file_extension} not currently supported")
 
 
 def extract_XML_metadata(
