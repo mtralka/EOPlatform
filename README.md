@@ -145,7 +145,8 @@ ndvi: np.ndarray = NDVI.create(NIR=nir_array, RED=red_array)
 
 ### Metadata extraction
 
-Supports `.txt` and `.xml` files through `extract_XML_metadata` and `extract_TXT_metadata`.
+Currently supports `.txt` and `.xml` files through `extract_XML_metadata` and `extract_TXT_metadata`.
+`extract_metadata` control function detects filetype and implements the required metadata extractor.
 
 ```python
 from eoplatform.metadata import extract_XML_metadata
@@ -154,6 +155,20 @@ file_path: str = ...
 target_attributes: List[str] = ...
 
 values: Dict[str, str] = extract_XML_metadata(file_path, target_attributes)
+
+```
+
+**or**
+detect filetype based on `file_path` file extension
+
+```python
+from eoplatform.metadata import extract_metadata
+
+file_path: str = "....xml"
+target_attributes: List[str] = ...
+
+values: Dict[str, str] = extract_metadata(file_path, target_attributes) # detects .xml and return `extract_XML_metadata`
+
 ```
 
 ## Adding platforms / composites
