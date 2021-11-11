@@ -54,11 +54,15 @@ def safe_eval(s, **kwargs) -> Any:
             if isinstance(node.left, ops):
                 left = _eval(node.left, **kwargs)
             else:
-                left = kwargs[node.left.id]
+                left = (
+                    kwargs[node.left.id] if hasattr(node.left, "id") else node.right.n
+                )
             if isinstance(node.right, ops):
                 right = _eval(node.right, **kwargs)
             else:
-                right = kwargs[node.right.id]
+                right = (
+                    kwargs[node.right.id] if hasattr(node.right, "id") else node.right.n
+                )
             return binOps[type(node.op)](left, right)
         elif isinstance(node, ast.UnaryOp):
             if isinstance(node.operand, ops):

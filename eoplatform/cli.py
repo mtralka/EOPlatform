@@ -19,6 +19,7 @@ def info_controller(
         only_bands=only_bands,
         show_description=show_description,
     )
+
     return None
 
 

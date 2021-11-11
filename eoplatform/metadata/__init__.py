@@ -1,2 +1,3 @@
 from eoplatform.metadata.metadata import extract_TXT_metadata
 from eoplatform.metadata.metadata import extract_XML_metadata
+from eoplatform.metadata.metadata import extract_metadata
