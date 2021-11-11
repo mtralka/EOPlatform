@@ -20,36 +20,36 @@
 
 ## About
 
-*eoplatform* is a Python package that aims to simplify Remote Sensing Earth Observation by providing actionable information on a wide swath of RS platforms and provide a simple API for downloading and visualizing RS imagery. Made for scientists, educators, and hobbiests alike.
+_eoplatform_ is a Python package that aims to simplify Remote Sensing Earth Observation by providing actionable information on a wide swath of RS platforms and provide a simple API for downloading and visualizing RS imagery. Made for scientists, educators, and hobbiests alike.
 
-* Easy access to information on RS platforms
-* `metadata` module for extracting platform metadata
-  * supports `.txt` and `.xml` files
-* `composites` modules for creating and learning about 91 RS band composites
+- Easy access to information on RS platforms
+- `metadata` module for extracting platform metadata
+  - supports `.txt` and `.xml` files
+- `composites` modules for creating and learning about 91 RS band composites
 
 Coming soon:
 
-* Data downloading
-  * Landsat 8
-  * Sentinel-2
-* Raster tools
-  * Raster IO functions
+- Data downloading
+  - Landsat 8
+  - Sentinel-2
+- Raster tools
+  - Raster IO functions
 
 ### Installation
 
-*eoplatform* can be installed by running `pip install eoplatform`. It requires Python 3.8 or above to run.
+_eoplatform_ can be installed by running `pip install eoplatform`. It requires Python 3.8 or above to run.
 
-#### *eoplatform* development is ongoing -
+#### _eoplatform_ development is ongoing -
 
 upgrade to the latest version by running:
 `pip install eoplatform -U`
 
 Install the latest dev version with:
-`pip install git+https://github.com/mtralka/EOPlatform/eoplatform`
+`pip install git+https://github.com/mtralka/EOPlatform`
 
 ### Usage
 
-*eoplatform* is accessible through the command line (CLI) and as a module import.
+_eoplatform_ is accessible through the command line (CLI) and as a module import.
 
 ### Querying information
 
@@ -235,31 +235,27 @@ bands: List[str]
 ```json
 {
   "abbreviation": "ARI",
-  "bands": [
-    "GREEN",
-    "VRE1"
-  ],
+  "bands": ["GREEN", "VRE1"],
   "description": "",
   "formula": "(1 / GREEN) - (1 / VRE1)",
   "name": "Anthocyanin Reflectance Index",
   "reference": "https://doi.org/10.1562/0031-8655(2001)074%3C0038:OPANEO%3E2.0.CO;2",
   "type": "vegetation"
 }
-
 ```
 
 #### Composite Types
 
 Possible values for composite `type` key
 
-* VEGETATION
-* BURN
-* WATER
-* SNOW
-* DROUGHT
-* URBAN
-* KERNEL
-* NONE
+- VEGETATION
+- BURN
+- WATER
+- SNOW
+- DROUGHT
+- URBAN
+- KERNEL
+- NONE
 
 **For both platforms and composites, all other attributes will be dynamically rendered and shown in `info`**
 
@@ -267,16 +263,16 @@ Possible values for composite `type` key
 
 See the [open issues](https://github.com/mtralka/EOPlatform/issues) for a list of proposed features (and known issues).
 
-* download support
+- download support
 
 ## Contributing
 
-Contributions are welcome. Currently, *eoplatform* is undergoing rapid development and contribution opportunities may be scarce.
+Contributions are welcome. Currently, _eoplatform_ is undergoing rapid development and contribution opportunities may be scarce.
 
-* If you have suggestions for adding or removing features, feel free to [open an issue](https://github.com/mtralka/EOPlatform/issues/new) to discuss it, or directly create a pull request with the proposed changes.
-* Create individual PR for each suggestion.
-* Use pre-commit hooks - `pre-commit install`
-* Code style is `black`, `mypy --strict`
+- If you have suggestions for adding or removing features, feel free to [open an issue](https://github.com/mtralka/EOPlatform/issues/new) to discuss it, or directly create a pull request with the proposed changes.
+- Create individual PR for each suggestion.
+- Use pre-commit hooks - `pre-commit install`
+- Code style is `black`, `mypy --strict`
 
 ## License
 
@@ -284,11 +280,11 @@ Distributed under the GNU GPL-3.0 License. See [LICENSE](https://github.com/mtra
 
 ## Built With
 
-* [Rich](https://github.com/willmcgugan/rich)
-* [Typer](https://github.com/tiangolo/typer)
-* [Numpy](https://numpy.org/)
-* [awesome spectral indices](https://github.com/davemlz/awesome-spectral-indices)
+- [Rich](https://github.com/willmcgugan/rich)
+- [Typer](https://github.com/tiangolo/typer)
+- [Numpy](https://numpy.org/)
+- [awesome spectral indices](https://github.com/davemlz/awesome-spectral-indices)
 
 ## Authors
 
-* [**Matthew Tralka**](https://github.com/mtralka/)
+- [**Matthew Tralka**](https://github.com/mtralka/)
